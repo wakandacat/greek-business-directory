@@ -1,8 +1,8 @@
 function Businesspage() {
-  
   return (
-    <div><h1>Businesspage
-        </h1></div>
+    <div>
+      <h1>Businesspage</h1>
+    </div>
   );
 }
 
