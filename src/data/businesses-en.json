@@ -1,76 +1,278 @@
-{
-    "Businesses" :
-    [
-        {
-            "id": "1",
-            "name": "Olympia",
-            "industries": ["Restaurant"],
-            "description" : "Family-owned Greek restaurant serving authentic Mediterranean cuisine since 1985. Specializing in traditional dishes and warm hospitality.",
-            "address": "1212 Bank Street, Ottawa, ON K1S 3Y3",
-            "phone": "(613) 555-1234",
-            "website": "https://olympiaottawa.com",
-            "email": "info@olympiaottawa.com",
-            "hours": {
-                "monday": "11:00 AM - 9:00 PM",
-                "tuesday": "11:00 AM - 9:00 PM",
-                "wednesday": "11:00 AM - 9:00 PM",
-                "thursday": "11:00 AM - 9:00 PM",
-                "friday": "11:00 AM - 10:00 PM",
-                "saturday": "11:00 AM - 10:00 PM",
-                "sunday": "Closed"
-            },
-            "coordinates": {
-                "lat": 45.4041,
-                "lng": -75.6903
-            },
-            "image": "/images/olympia.jpg"
+[
+    {
+        "id": "0",
+        "name": "Olympia",
+        "categories": ["Laundry"],
+        "description" : "Family-owned Greek restaurant serving authentic Mediterranean cuisine since 1985. Specializing in traditional dishes and warm hospitality.",
+        "address": "1212 Bank Street, Ottawa, ON K1S 3Y3",
+        "phone": "(613) 555-1234",
+        "website": "https://olympiaottawa.com",
+        "email": "info@olympiaottawa.com",
+        "hours": {
+            "monday": "11:00 AM - 9:00 PM",
+            "tuesday": "11:00 AM - 9:00 PM",
+            "wednesday": "11:00 AM - 9:00 PM",
+            "thursday": "11:00 AM - 9:00 PM",
+            "friday": "11:00 AM - 10:00 PM",
+            "saturday": "11:00 AM - 10:00 PM",
+            "sunday": "Closed"
         },
-        {
-            "id": "2",
-            "name": "Athens Bakery",
-            "category": "Bakery",
-            "categories": ["Bakery", "Café"],
-            "description": "Traditional Greek bakery offering fresh pastries, bread, and desserts daily. Known for our authentic baklava and spanakopita.",
-            "address": "567 Somerset Street West, Ottawa, ON K1R 5K1",
-            "phone": "(613) 555-5678",
-            "website": "https://athensbakery.ca",
-            "hours": {
-                "monday": "7:00 AM - 6:00 PM",
-                "tuesday": "7:00 AM - 6:00 PM",
-                "wednesday": "7:00 AM - 6:00 PM",
-                "thursday": "7:00 AM - 6:00 PM",
-                "friday": "7:00 AM - 6:00 PM",
-                "saturday": "8:00 AM - 5:00 PM",
-                "sunday": "9:00 AM - 3:00 PM"
-            },
-            "coordinates": {
-                "lat": 45.4115,
-                "lng": -75.7016
-            },
-            "image": "/images/olympia.jpg"
+        "coordinates": {
+            "lat": 45.4041,
+            "lng": -75.6903
         },
-        {
-            "id": "3",
-            "name": "Sunny Yard Maintenance",
-            "category": "Services",
-            "categories": ["Landscape", "Outdoor Construction"],
-            "description": "Professional landscaping and outdoor construction services for residential and commercial properties. Quality work guaranteed.",
-            "address": "27 Half Road, Orleans, ON K1E 1X1",
-            "phone": "(613) 555-9999",
-            "hours": {
-                "monday": "1:00 PM - 7:00 PM",
-                "tuesday": "1:00 PM - 7:00 PM",
-                "wednesday": "1:00 PM - 7:00 PM",
-                "thursday": "1:00 PM - 7:00 PM",
-                "friday": "1:00 PM - 7:00 PM",
-                "saturday": "1:00 PM - 7:00 PM",
-                "sunday": "Closed"
-            },
-            "coordinates": {
-                "lat": 45.4768,
-                "lng": -75.5010
-            },
-            "image": "/images/olympia.jpg"
-        }
-    ]
-}
+        "image": "/images/olympia.jpg"
+    },
+    {
+        "id": "1",
+        "name": "Athens Bakery",
+        "categories": ["Bakery", "Café"],
+        "description": "Traditional Greek bakery offering fresh pastries, bread, and desserts daily. Known for our authentic baklava and spanakopita.",
+        "address": "567 Somerset Street West, Ottawa, ON K1R 5K1",
+        "phone": "(613) 555-5678",
+        "website": "https://athensbakery.ca",
+        "hours": {
+            "monday": "7:00 AM - 6:00 PM",
+            "tuesday": "7:00 AM - 6:00 PM",
+            "wednesday": "7:00 AM - 6:00 PM",
+            "thursday": "7:00 AM - 6:00 PM",
+            "friday": "7:00 AM - 6:00 PM",
+            "saturday": "8:00 AM - 5:00 PM",
+            "sunday": "9:00 AM - 3:00 PM"
+        },
+        "coordinates": {
+            "lat": 45.4115,
+            "lng": -75.7016
+        },
+        "image": "/images/olympia.jpg"
+    },
+    {
+        "id": "2",
+        "name": "Sunny Yard Maintenance",
+        "categories": ["Landscape", "Outdoor Construction"],
+        "description": "Professional landscaping and outdoor construction services for residential and commercial properties. Quality work guaranteed.",
+        "address": "27 Half Road, Orleans, ON K1E 1X1",
+        "phone": "(613) 555-9999",
+        "hours": {
+            "monday": "1:00 PM - 7:00 PM",
+            "tuesday": "1:00 PM - 7:00 PM",
+            "wednesday": "1:00 PM - 7:00 PM",
+            "thursday": "1:00 PM - 7:00 PM",
+            "friday": "1:00 PM - 7:00 PM",
+            "saturday": "1:00 PM - 7:00 PM",
+            "sunday": "Closed"
+        },
+        "coordinates": {
+            "lat": 45.4768,
+            "lng": -75.5010
+        },
+        "image": "/images/olympia.jpg"
+    },
+    {
+        "id": "3",
+        "name": "Olympia",
+        "categories": ["Restaurant"],
+        "description" : "Family-owned Greek restaurant serving authentic Mediterranean cuisine since 1985. Specializing in traditional dishes and warm hospitality.",
+        "address": "1212 Bank Street, Ottawa, ON K1S 3Y3",
+        "phone": "(613) 555-1234",
+        "website": "https://olympiaottawa.com",
+        "email": "info@olympiaottawa.com",
+        "hours": {
+            "monday": "11:00 AM - 9:00 PM",
+            "tuesday": "11:00 AM - 9:00 PM",
+            "wednesday": "11:00 AM - 9:00 PM",
+            "thursday": "11:00 AM - 9:00 PM",
+            "friday": "11:00 AM - 10:00 PM",
+            "saturday": "11:00 AM - 10:00 PM",
+            "sunday": "Closed"
+        },
+        "coordinates": {
+            "lat": 45.4041,
+            "lng": -75.6903
+        },
+        "image": "/images/olympia.jpg"
+    },
+    {
+        "id": "4",
+        "name": "Athens Bakery",
+        "categories": ["Bakery", "Café"],
+        "description": "Traditional Greek bakery offering fresh pastries, bread, and desserts daily. Known for our authentic baklava and spanakopita.",
+        "address": "567 Somerset Street West, Ottawa, ON K1R 5K1",
+        "phone": "(613) 555-5678",
+        "website": "https://athensbakery.ca",
+        "hours": {
+            "monday": "7:00 AM - 6:00 PM",
+            "tuesday": "7:00 AM - 6:00 PM",
+            "wednesday": "7:00 AM - 6:00 PM",
+            "thursday": "7:00 AM - 6:00 PM",
+            "friday": "7:00 AM - 6:00 PM",
+            "saturday": "8:00 AM - 5:00 PM",
+            "sunday": "9:00 AM - 3:00 PM"
+        },
+        "coordinates": {
+            "lat": 45.4115,
+            "lng": -75.7016
+        },
+        "image": "/images/olympia.jpg"
+    },
+    {
+        "id": "5",
+        "name": "Sunny Yard Maintenance",
+        "categories": ["Landscape", "Outdoor Construction"],
+        "description": "Professional landscaping and outdoor construction services for residential and commercial properties. Quality work guaranteed.",
+        "address": "27 Half Road, Orleans, ON K1E 1X1",
+        "phone": "(613) 555-9999",
+        "hours": {
+            "monday": "1:00 PM - 7:00 PM",
+            "tuesday": "1:00 PM - 7:00 PM",
+            "wednesday": "1:00 PM - 7:00 PM",
+            "thursday": "1:00 PM - 7:00 PM",
+            "friday": "1:00 PM - 7:00 PM",
+            "saturday": "1:00 PM - 7:00 PM",
+            "sunday": "Closed"
+        },
+        "coordinates": {
+            "lat": 45.4768,
+            "lng": -75.5010
+        },
+        "image": "/images/olympia.jpg"
+    },
+    {
+        "id": "6",
+        "name": "Olympia",
+        "categories": ["Restaurant"],
+        "description" : "Family-owned Greek restaurant serving authentic Mediterranean cuisine since 1985. Specializing in traditional dishes and warm hospitality.",
+        "address": "1212 Bank Street, Ottawa, ON K1S 3Y3",
+        "phone": "(613) 555-1234",
+        "website": "https://olympiaottawa.com",
+        "email": "info@olympiaottawa.com",
+        "hours": {
+            "monday": "11:00 AM - 9:00 PM",
+            "tuesday": "11:00 AM - 9:00 PM",
+            "wednesday": "11:00 AM - 9:00 PM",
+            "thursday": "11:00 AM - 9:00 PM",
+            "friday": "11:00 AM - 10:00 PM",
+            "saturday": "11:00 AM - 10:00 PM",
+            "sunday": "Closed"
+        },
+        "coordinates": {
+            "lat": 45.4041,
+            "lng": -75.6903
+        },
+        "image": "/images/olympia.jpg"
+    },
+    {
+        "id": "7",
+        "name": "Athens Bakery",
+        "categories": ["Bakery", "Café"],
+        "description": "Traditional Greek bakery offering fresh pastries, bread, and desserts daily. Known for our authentic baklava and spanakopita.",
+        "address": "567 Somerset Street West, Ottawa, ON K1R 5K1",
+        "phone": "(613) 555-5678",
+        "website": "https://athensbakery.ca",
+        "hours": {
+            "monday": "7:00 AM - 6:00 PM",
+            "tuesday": "7:00 AM - 6:00 PM",
+            "wednesday": "7:00 AM - 6:00 PM",
+            "thursday": "7:00 AM - 6:00 PM",
+            "friday": "7:00 AM - 6:00 PM",
+            "saturday": "8:00 AM - 5:00 PM",
+            "sunday": "9:00 AM - 3:00 PM"
+        },
+        "coordinates": {
+            "lat": 45.4115,
+            "lng": -75.7016
+        },
+        "image": "/images/olympia.jpg"
+    },
+    {
+        "id": "8",
+        "name": "Sunny Yard Maintenance",
+        "categories": ["Landscape", "Outdoor Construction"],
+        "description": "Professional landscaping and outdoor construction services for residential and commercial properties. Quality work guaranteed.",
+        "address": "27 Half Road, Orleans, ON K1E 1X1",
+        "phone": "(613) 555-9999",
+        "hours": {
+            "monday": "1:00 PM - 7:00 PM",
+            "tuesday": "1:00 PM - 7:00 PM",
+            "wednesday": "1:00 PM - 7:00 PM",
+            "thursday": "1:00 PM - 7:00 PM",
+            "friday": "1:00 PM - 7:00 PM",
+            "saturday": "1:00 PM - 7:00 PM",
+            "sunday": "Closed"
+        },
+        "coordinates": {
+            "lat": 45.4768,
+            "lng": -75.5010
+        },
+        "image": "/images/olympia.jpg"
+    },
+    {
+        "id": "9",
+        "name": "Olympia",
+        "categories": ["Restaurant"],
+        "description" : "Family-owned Greek restaurant serving authentic Mediterranean cuisine since 1985. Specializing in traditional dishes and warm hospitality.",
+        "address": "1212 Bank Street, Ottawa, ON K1S 3Y3",
+        "phone": "(613) 555-1234",
+        "website": "https://olympiaottawa.com",
+        "email": "info@olympiaottawa.com",
+        "hours": {
+            "monday": "11:00 AM - 9:00 PM",
+            "tuesday": "11:00 AM - 9:00 PM",
+            "wednesday": "11:00 AM - 9:00 PM",
+            "thursday": "11:00 AM - 9:00 PM",
+            "friday": "11:00 AM - 10:00 PM",
+            "saturday": "11:00 AM - 10:00 PM",
+            "sunday": "Closed"
+        },
+        "coordinates": {
+            "lat": 45.4041,
+            "lng": -75.6903
+        },
+        "image": "/images/olympia.jpg"
+    },
+    {
+        "id": "10",
+        "name": "Athens Bakery",
+        "categories": ["Bakery", "Café"],
+        "description": "Traditional Greek bakery offering fresh pastries, bread, and desserts daily. Known for our authentic baklava and spanakopita.",
+        "address": "567 Somerset Street West, Ottawa, ON K1R 5K1",
+        "phone": "(613) 555-5678",
+        "website": "https://athensbakery.ca",
+        "hours": {
+            "monday": "7:00 AM - 6:00 PM",
+            "tuesday": "7:00 AM - 6:00 PM",
+            "wednesday": "7:00 AM - 6:00 PM",
+            "thursday": "7:00 AM - 6:00 PM",
+            "friday": "7:00 AM - 6:00 PM",
+            "saturday": "8:00 AM - 5:00 PM",
+            "sunday": "9:00 AM - 3:00 PM"
+        },
+        "coordinates": {
+            "lat": 45.4115,
+            "lng": -75.7016
+        },
+        "image": "/images/olympia.jpg"
+    },
+    {
+        "id": "11",
+        "name": "Sunny Yard Maintenance",
+        "categories": ["Landscape", "Outdoor Construction"],
+        "description": "Professional landscaping and outdoor construction services for residential and commercial properties. Quality work guaranteed.",
+        "address": "27 Half Road, Orleans, ON K1E 1X1",
+        "phone": "(613) 555-9999",
+        "hours": {
+            "monday": "1:00 PM - 7:00 PM",
+            "tuesday": "1:00 PM - 7:00 PM",
+            "wednesday": "1:00 PM - 7:00 PM",
+            "thursday": "1:00 PM - 7:00 PM",
+            "friday": "1:00 PM - 7:00 PM",
+            "saturday": "1:00 PM - 7:00 PM",
+            "sunday": "Closed"
+        },
+        "coordinates": {
+            "lat": 45.4768,
+            "lng": -75.5010
+        },
+        "image": "/images/olympia.jpg"
+    }
+]
