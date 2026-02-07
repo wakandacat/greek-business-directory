@@ -12,22 +12,33 @@ import { Box } from '@mui/material';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1e11d4',
-      light: '#1e11d4',
-      dark: '#1e11d4',
+      //main detail colour for buttons and other standout elements
+      main: '#0D5EAF',
+      light: '#5595d4',
+      dark: '#093a6b',
       contrastText: '#ffffff',
     },
     secondary: {
-      main: '#abcbff',
-      light: '#abcbff',
-      dark: '#abcbff',
-      contrastText: '#000000',
+      //for navbar, footer
+      main: '#1E2A3A',
+      light: '#475466',
+      dark: '#0f151d',
+      contrastText: '#ffffff',
+    },
+    background: {
+      paper: '#ffffff',
+      default: '#F7F8FA',
+    },
+    text: {
+      primary: '#2C2C2C',
+      secondary: '#ffffff',
     },
   },
   typography: {
     button: {
       textTransform: 'none', // no uppercase
       fontWeight: 500,
+      textDecoration: 'none', //no underline for links
     },
   },
 });

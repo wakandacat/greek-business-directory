@@ -12,6 +12,31 @@ function HomePage() {
   const numEntriesPerPage = 9;
   const [page, setPage] = useState<number>(1);
 
+  //user's position
+  const [userLocation, setUserLocation] = useState<{
+    lat: number;
+    lng: number;
+  } | null>(null);
+
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setUserLocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          });
+        },
+        (error) => {
+          console.error('Location error:', error);
+          console.log('Could not get your location.');
+        }
+      );
+    } else {
+      console.log('Geolocation is not supported by this browser.');
+    }
+  }, []);
+
   //filter bar values
   const CATEGORIES = [
     'All',
@@ -26,15 +51,22 @@ function HomePage() {
     'Healthcare',
     'Other',
   ];
+
+  //sorting values
+  const SORTBY = ['None', 'Alphabetical', 'Closest'];
+
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedSort, setSelectedSort] = useState('None');
 
   //calculate the businesses to render based on the filters
-  const filteredBusinesses = allBusinessInfo.filter(handleFilter);
+  const filteredBusinesses = allBusinessInfo.filter(handleFilter); //filter first
+  const sortedBusinesses = handleSort(); //then sort
 
   function handleFilter(business: Business) {
+    //CATEGORIESFILTER
     //return all businesses when the filter is 'All'
     if (selectedCategory === 'All') {
-      return business;
+      return true;
     }
     //return businesses that do not satisfy any other filter if the filter is "Other"
     else if (selectedCategory === 'Other') {
@@ -48,16 +80,69 @@ function HomePage() {
       });
       //all other filters return businesses of that category
     } else if (business.categories.includes(selectedCategory)) {
-      return business;
+      return true;
     }
   }
 
-  console.log(filteredBusinesses);
+  //----------------calculating distance functions reference: https://dev.to/ayushman/measure-distance-between-two-locations-in-javascript-using-the-haversine-formula-7dc----//
+  function degToRad(deg: number) {
+    var rad = (deg * Math.PI) / 180;
+    return rad;
+  }
+
+  // Calculate distance between two coordinates
+  function calculateDistance(
+    startCoords: { lat: number; lng: number },
+    destCoords: { lat: number; lng: number }
+  ) {
+    const startingLat = degToRad(startCoords.lat);
+    const startingLong = degToRad(startCoords.lng);
+    const destinationLat = degToRad(destCoords.lat);
+    const destinationLong = degToRad(destCoords.lng);
+
+    // Radius of the Earth (in kilometers)
+    const radius = 6371;
+
+    // Haversine formula
+    const distance =
+      Math.acos(
+        Math.sin(startingLat) * Math.sin(destinationLat) +
+          Math.cos(startingLat) *
+            Math.cos(destinationLat) *
+            Math.cos(startingLong - destinationLong)
+      ) * radius;
+
+    return distance;
+  }
+  //--------------------------end of reference-------------------------
+
+  //sorting filters
+  function handleSort() {
+    if (selectedSort === 'Alphabetical') {
+      return [...filteredBusinesses].sort((a, b) =>
+        a.name.localeCompare(b.name)
+      ); //ascending order A to Z
+    } else if (selectedSort === 'Closest') {
+      if (!userLocation) {
+        //no location available
+        return filteredBusinesses;
+      }
+      //calculate distances between business coords
+      return [...filteredBusinesses].sort((a, b) => {
+        const distanceA = calculateDistance(userLocation, a.coordinates);
+        const distanceB = calculateDistance(userLocation, b.coordinates);
+
+        return distanceA - distanceB;
+      });
+    } else {
+      return filteredBusinesses; //default sort order
+    }
+  }
 
   //calculate the businesses to render based on the pagination
   const startIndex = (page - 1) * numEntriesPerPage;
   const endIndex = startIndex + numEntriesPerPage;
-  const currentPageBusinesses = filteredBusinesses.slice(startIndex, endIndex);
+  const currentPageBusinesses = sortedBusinesses.slice(startIndex, endIndex);
 
   return (
     <Container sx={{ display: 'flex', flexDirection: 'column', py: 15 }}>
@@ -67,6 +152,9 @@ function HomePage() {
       <FilterBar
         categoryFilter={selectedCategory}
         setCategoryFilter={setSelectedCategory}
+        sortFilter={selectedSort}
+        setSortFilter={setSelectedSort}
+        userLocation={userLocation}
       />
 
       {allBusinessInfo.length === 0 || filteredBusinesses.length === 0 ? (
@@ -90,19 +178,20 @@ function HomePage() {
               gap: 2,
             }}
           >
-            {currentPageBusinesses.map((business) => (
+            {currentPageBusinesses.map((business: Business) => (
               <BusinessCard
                 key={business.id}
                 id={business.id}
                 name={business.name}
                 categories={business.categories}
                 description={business.description}
+                address={business.address}
                 image={business.image}
               ></BusinessCard>
             ))}
           </Box>
           <Pagination
-            count={Math.ceil(allBusinessInfo.length / numEntriesPerPage)}
+            count={Math.ceil(sortedBusinesses.length / numEntriesPerPage)}
             page={page}
             onChange={(event, value) => {
               setPage(value);

@@ -15,6 +15,7 @@ interface propType {
   name: string;
   categories: string[];
   description: string;
+  address: string;
   image?: string;
 }
 
@@ -44,6 +45,18 @@ function BusinessCard(props: propType) {
             }}
           >
             {props.description}
+          </Typography>
+          <Typography
+            component="p"
+            sx={{
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              display: '-webkit-box',
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: 'vertical',
+            }}
+          >
+            {props.address}
           </Typography>
           <Typography component="p">{props.categories}</Typography>
         </CardContent>
