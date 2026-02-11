@@ -1,10 +1,12 @@
 import {
-  Toolbar,
+  Box,
   FormControl,
   Select,
   MenuItem,
   Typography,
   InputLabel,
+  TextField,
+  Button,
 } from '@mui/material';
 
 interface FilterProps {
@@ -13,6 +15,9 @@ interface FilterProps {
   sortFilter: string;
   setSortFilter: (category: string) => void;
   userLocation: { lat: number; lng: number } | null;
+  searchValue: string;
+  setSearchValue: (searchValue: string) => void;
+  clearFilters: () => void;
 }
 
 function FilterBar(props: FilterProps) {
@@ -33,7 +38,15 @@ function FilterBar(props: FilterProps) {
   const SORTBY = ['None', 'Alphabetical', 'Closest'];
 
   return (
-    <Toolbar disableGutters>
+    <Box sx={{ py: 3, display: 'flex', gap: 4 }}>
+      <TextField
+        fullWidth
+        id="outlined-basic"
+        placeholder="Search"
+        variant="outlined"
+        value={props.searchValue}
+        onChange={(e) => props.setSearchValue(e.target.value)}
+      />
       <FormControl fullWidth>
         <InputLabel id="categorySelectLabel" sx={{ color: 'text.primary' }}>
           Industry
@@ -72,7 +85,14 @@ function FilterBar(props: FilterProps) {
           ))}
         </Select>
       </FormControl>
-    </Toolbar>
+      <Button
+        variant="outlined"
+        sx={{ minWidth: 100, p: 0 }}
+        onClick={() => props.clearFilters()}
+      >
+        Clear Filters
+      </Button>
+    </Box>
   );
 }
 

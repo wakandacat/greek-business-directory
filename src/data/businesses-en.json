@@ -21,7 +21,7 @@
             "lat": 45.39192216986515,
             "lng": -75.68179839182066
         },
-        "image": "/images/olympia.jpg"
+        "image": "/images/default-photo.jpg"
     },
     {
         "id": "1",
@@ -44,7 +44,7 @@
             "lat": 45.37665251809968, 
             "lng": -76.26272130000402
         },
-        "image": "/images/olympia.jpg"
+        "image": "/tempIcon.png"
     },
     {
         "id": "2",
@@ -66,7 +66,7 @@
             "lat": 45.26940773412047,
             "lng": -76.12148431613325
         },
-        "image": "/images/olympia.jpg"
+        "image": "/images/landscape.jpg"
     },
     {
         "id": "3",
@@ -90,7 +90,7 @@
             "lat": 45.29713567600164, 
             "lng": -75.97658040263998
         },
-        "image": "/images/olympia.jpg"
+        "image": "/images/greece.jpg"
     },
     {
         "id": "4",
@@ -113,7 +113,7 @@
             "lat": 45.32381357460997, 
             "lng": -75.89275580263902
         },
-        "image": "/images/olympia.jpg"
+        "image": "/images/bakery.jpg"
     },
     {
         "id": "5",
@@ -135,7 +135,7 @@
             "lat": 45.33180276438533, 
             "lng": -75.91768544496676
         },
-        "image": "/images/olympia.jpg"
+        "image": "/images/landscape.jpg"
     },
     {
         "id": "6",
@@ -159,7 +159,7 @@
             "lat": 45.39351265929934, 
             "lng": -75.68914797198228
         },
-        "image": "/images/olympia.jpg"
+        "image": "/images/greece.jpg"
     },
     {
         "id": "7",
@@ -182,7 +182,7 @@
             "lat": 45.390284587314035,
             "lng": -75.6721718157329
         },
-        "image": "/images/olympia.jpg"
+        "image": "/images/bakery.jpg"
     },
     {
         "id": "8",
@@ -204,7 +204,7 @@
             "lat": 45.34521324239308, 
             "lng": -75.97786708729414
         },
-        "image": "/images/olympia.jpg"
+        "image": "/images/landscape.jpg"
     },
     {
         "id": "9",
@@ -228,7 +228,7 @@
             "lat": 45.346010359379555, 
             "lng": -76.03772620078622
         },
-        "image": "/images/olympia.jpg"
+        "image": "/images/greece.jpg"
     },
     {
         "id": "10",
@@ -251,7 +251,7 @@
             "lat": 45.54437500764492, 
             "lng": -75.30281084680983
         },
-        "image": "/images/olympia.jpg"
+        "image": "/images/bakery.jpg"
     },
     {
         "id": "11",
@@ -273,6 +273,6 @@
             "lat": 45.47803727453156, 
             "lng": -75.36306298914057
         },
-        "image": "/images/olympia.jpg"
+        "image": "/images/landscape.jpg"
     }
 ]

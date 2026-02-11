@@ -6,6 +6,7 @@ import {
   Typography,
   Box,
   Button,
+  Icon,
 } from '@mui/material';
 
 import { Link } from 'react-router-dom';
@@ -34,6 +35,23 @@ function BusinessCard(props: propType) {
           <Typography variant="h5" component="p" sx={{ fontWeight: 700 }}>
             {props.name}
           </Typography>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, py: 1 }}>
+            {props.categories.map((category) => (
+              <Typography
+                key={category}
+                component="p"
+                sx={{
+                  fontSize: '0.8rem',
+                  fontWeight: 700,
+                  border: '1px solid',
+                  px: 1,
+                  borderColor: 'primary.main',
+                }}
+              >
+                {category}
+              </Typography>
+            ))}
+          </Box>
           <Typography
             component="p"
             sx={{
@@ -46,22 +64,30 @@ function BusinessCard(props: propType) {
           >
             {props.description}
           </Typography>
-          <Typography
-            component="p"
-            sx={{
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
-              display: '-webkit-box',
-              WebkitLineClamp: 2,
-              WebkitBoxOrient: 'vertical',
-            }}
-          >
-            {props.address}
-          </Typography>
-          <Typography component="p">{props.categories}</Typography>
+          <Box sx={{ display: 'flex', pt: 2 }}>
+            <Typography
+              component="p"
+              sx={{
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                display: '-webkit-box',
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: 'vertical',
+                fontStyle: 'italic',
+              }}
+            >
+              {props.address}
+            </Typography>
+          </Box>
         </CardContent>
         <CardActions>
-          <Button size="small" component={Link} to={`/business/${props.id}`}>
+          <Button
+            size="small"
+            variant="contained"
+            disableElevation
+            component={Link}
+            to={`/business/${props.id}`}
+          >
             View Business
           </Button>
         </CardActions>

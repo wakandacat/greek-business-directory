@@ -55,12 +55,27 @@ function HomePage() {
   //sorting values
   const SORTBY = ['None', 'Alphabetical', 'Closest'];
 
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [selectedSort, setSelectedSort] = useState('None');
+  const [searchValue, setSearchValue] = useState(''); //search bar
+  const [selectedCategory, setSelectedCategory] = useState('All'); //industry dropdown
+  const [selectedSort, setSelectedSort] = useState('None'); //sort dropdown
 
   //calculate the businesses to render based on the filters
-  const filteredBusinesses = allBusinessInfo.filter(handleFilter); //filter first
+  const searchBusiness = handleSearch(); //search first
+  const filteredBusinesses = searchBusiness.filter(handleFilter); //then filter
   const sortedBusinesses = handleSort(); //then sort
+
+  function handleSearch() {
+    let searchTerm = searchValue.toLowerCase().trim();
+
+    let searchFilteredBusinesses = allBusinessInfo.filter(
+      (business) =>
+        business.name.toLowerCase().includes(searchTerm) ||
+        business.description.toLowerCase().includes(searchTerm) ||
+        business.address.toLowerCase().includes(searchTerm)
+    );
+
+    return searchFilteredBusinesses;
+  }
 
   function handleFilter(business: Business) {
     //CATEGORIESFILTER
@@ -139,14 +154,27 @@ function HomePage() {
     }
   }
 
+  function clearFilters() {
+    setSearchValue('');
+    setSelectedCategory('All');
+    setSelectedSort('None');
+  }
+
   //calculate the businesses to render based on the pagination
   const startIndex = (page - 1) * numEntriesPerPage;
   const endIndex = startIndex + numEntriesPerPage;
   const currentPageBusinesses = sortedBusinesses.slice(startIndex, endIndex);
 
   return (
-    <Container sx={{ display: 'flex', flexDirection: 'column', py: 15 }}>
-      <Typography variant="h3" component="h1">
+    <Container
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        pb: 5,
+        pt: { xs: 22, md: 10 },
+      }}
+    >
+      <Typography variant="h3" component="h1" sx={{ py: 3 }}>
         Ottawa Greek Business Directory
       </Typography>
       <FilterBar
@@ -155,27 +183,35 @@ function HomePage() {
         sortFilter={selectedSort}
         setSortFilter={setSelectedSort}
         userLocation={userLocation}
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+        clearFilters={clearFilters}
       />
 
       {allBusinessInfo.length === 0 || filteredBusinesses.length === 0 ? (
         // we have no businesses
         <Container sx={{ display: 'flex', flexDirection: 'column', py: 15 }}>
-          <Typography variant="h1" component="h1">
+          <Typography variant="h3" component="h1">
             No business info available.
           </Typography>
         </Container>
       ) : (
         // show businesses as usual
         <>
-          <Typography variant="h4" component="h3">
-            Showing {filteredBusinesses.length} businesses
+          <Typography variant="h4" component="h3" sx={{ py: 2 }}>
+            {filteredBusinesses.length} results for "{selectedCategory}"
           </Typography>
           <Box
             sx={{
               width: '100%',
               display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
+              gridTemplateColumns: {
+                xs: 'repeat(1, 1fr)',
+                sm: 'repeat(2, 1fr)',
+                md: 'repeat(3, 1fr)',
+              },
               gap: 2,
+              justifyItems: 'center',
             }}
           >
             {currentPageBusinesses.map((business: Business) => (
@@ -190,15 +226,20 @@ function HomePage() {
               ></BusinessCard>
             ))}
           </Box>
-          <Pagination
-            count={Math.ceil(sortedBusinesses.length / numEntriesPerPage)}
-            page={page}
-            onChange={(event, value) => {
-              setPage(value);
-              document.body.scrollTop = 0; // For Safari
-              document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-            }}
-          />
+          <Box sx={{ display: 'flex', justifyContent: 'center', py: 4 }}>
+            <Pagination
+              size="large"
+              variant="outlined"
+              color="primary"
+              count={Math.ceil(sortedBusinesses.length / numEntriesPerPage)}
+              page={page}
+              onChange={(event, value) => {
+                setPage(value);
+                document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+              }}
+            />
+          </Box>
         </>
       )}
     </Container>

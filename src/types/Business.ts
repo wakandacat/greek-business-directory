@@ -1,3 +1,5 @@
+export type DayOfWeek = 'monday' | 'tuesday' | 'wednesday' | 'thursday' | 'friday' | 'saturday' | 'sunday';
+
 export interface Business {
   id: string;
   name: string;
@@ -7,15 +9,7 @@ export interface Business {
   phone: string;
   website?: string;
   email?: string;
-  hours: {
-    monday?: string;
-    tuesday?: string;
-    wednesday?: string;
-    thursday?: string;
-    friday?: string;
-    saturday?: string;
-    sunday?: string;
-  };
+  hours: Record<DayOfWeek, string>;
   coordinates: {
     lat: number;
     lng: number;

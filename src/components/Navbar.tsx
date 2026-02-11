@@ -3,9 +3,17 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <AppBar color="secondary">
-      <Toolbar sx={{ justifyContent: 'space-between' }}>
-        <Toolbar>
+    <AppBar color="secondary" sx={{ display: 'relative' }}>
+      <Box
+        sx={{
+          justifyContent: 'space-between',
+          display: 'flex',
+          flexDirection: { xs: 'column', md: 'row' },
+        }}
+      >
+        <Box
+          sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }}
+        >
           <Toolbar>
             <Box sx={{ p: 1 }}>
               <img
@@ -40,13 +48,13 @@ function Navbar() {
               Contact
             </Typography>
           </Button>
-        </Toolbar>
+        </Box>
         <Button variant="contained" color="secondary" disableElevation>
           <Typography variant="h6" component="p">
             Language
           </Typography>
         </Button>
-      </Toolbar>
+      </Box>
     </AppBar>
   );
 }

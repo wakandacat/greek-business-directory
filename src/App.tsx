@@ -21,7 +21,7 @@ const theme = createTheme({
     secondary: {
       //for navbar, footer
       main: '#1E2A3A',
-      light: '#475466',
+      light: '#a9c3eb',
       dark: '#0f151d',
       contrastText: '#ffffff',
     },
@@ -39,6 +39,15 @@ const theme = createTheme({
       textTransform: 'none', // no uppercase
       fontWeight: 500,
       textDecoration: 'none', //no underline for links
+    },
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
     },
   },
 });
