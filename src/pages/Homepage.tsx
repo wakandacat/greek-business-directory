@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import type { Business } from '../types/Business';
 import businessData from '../data/businesses-en.json'; //synchronous data bundled at build time --> would need to be an async function if a backend is added
 import FilterBar from '../components/FilterBar';
+import { CATEGORIES, SORTBY } from '../data/constants';
 
 function HomePage() {
   const allBusinessInfo = businessData as Business[]; //create an array of Businesses to store the contents of the JSON file
@@ -36,24 +37,6 @@ function HomePage() {
       console.log('Geolocation is not supported by this browser.');
     }
   }, []);
-
-  //filter bar values
-  const CATEGORIES = [
-    'All',
-    'Restaurant',
-    'Bakery',
-    'Café',
-    'Services',
-    'Retail',
-    'Professional Services',
-    'Construction',
-    'Landscape',
-    'Healthcare',
-    'Other',
-  ];
-
-  //sorting values
-  const SORTBY = ['None', 'Alphabetical', 'Closest'];
 
   const [searchValue, setSearchValue] = useState(''); //search bar
   const [selectedCategory, setSelectedCategory] = useState('All'); //industry dropdown
@@ -199,7 +182,7 @@ function HomePage() {
         // show businesses as usual
         <>
           <Typography variant="h4" component="h3" sx={{ py: 2 }}>
-            {filteredBusinesses.length} results for "{selectedCategory}"
+            {filteredBusinesses.length} business results
           </Typography>
           <Box
             sx={{

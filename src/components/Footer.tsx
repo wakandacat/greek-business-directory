@@ -44,7 +44,7 @@ function Footer() {
           >
             ellena.tzavelas@gmail.com
           </MuiLink>{' '}
-          for any questions and concerns.
+          for any questions or concerns.
         </Typography>
 
         <Typography variant="body2" component="p" sx={{ opacity: 0.6 }}>

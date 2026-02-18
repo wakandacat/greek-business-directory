@@ -38,7 +38,14 @@ function FilterBar(props: FilterProps) {
   const SORTBY = ['None', 'Alphabetical', 'Closest'];
 
   return (
-    <Box sx={{ py: 3, display: 'flex', gap: 4 }}>
+    <Box
+      sx={{
+        py: 3,
+        display: 'flex',
+        flexDirection: { xs: 'column', md: 'row' },
+        gap: 4,
+      }}
+    >
       <TextField
         fullWidth
         id="outlined-basic"

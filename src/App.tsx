@@ -7,6 +7,8 @@ import Navbar from './components/Navbar';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Footer from './components/Footer';
 import { Box } from '@mui/material';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
 //custom site theme
 const theme = createTheme({
@@ -56,29 +58,31 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Router>
-          {/* root element */}
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              minHeight: '100vh',
-              overflowX: 'hidden',
-              scrollBehavior: 'smooth',
-            }}
-          >
-            <Navbar />
-            <Box sx={{ flex: 1 }}>
-              <Routes>
-                <Route path="/" element={<Homepage />} />
-                <Route path="/business/:id" element={<Businesspage />} />
-                <Route path="/contact" element={<Contact />} />
-              </Routes>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <CssBaseline />
+          <Router>
+            {/* root element */}
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                minHeight: '100vh',
+                overflowX: 'hidden',
+                scrollBehavior: 'smooth',
+              }}
+            >
+              <Navbar />
+              <Box sx={{ flex: 1 }}>
+                <Routes>
+                  <Route path="/" element={<Homepage />} />
+                  <Route path="/business/:id" element={<Businesspage />} />
+                  <Route path="/contact" element={<Contact />} />
+                </Routes>
+              </Box>
+              <Footer />
             </Box>
-            <Footer />
-          </Box>
-        </Router>
+          </Router>
+        </LocalizationProvider>
       </ThemeProvider>
     </>
   );

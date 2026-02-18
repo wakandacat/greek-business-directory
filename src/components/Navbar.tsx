@@ -12,18 +12,12 @@ function Navbar() {
         }}
       >
         <Box
-          sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }}
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
+          }}
         >
-          <Toolbar>
-            <Box sx={{ p: 1 }}>
-              <img
-                src="/tempIcon.png"
-                alt="site logo"
-                loading="lazy"
-                height="50"
-              />
-            </Box>
-
+          <Box sx={{ display: 'flex' }}>
             <Button
               disableElevation
               variant="contained"
@@ -31,11 +25,26 @@ function Navbar() {
               component={Link}
               to={'/'}
             >
+              <Box
+                sx={{
+                  pr: 1,
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignContent: 'center',
+                }}
+              >
+                <img
+                  src="/ogbd-logo.png"
+                  alt="site logo"
+                  loading="lazy"
+                  height="50"
+                />
+              </Box>
               <Typography variant="h6" component="p">
                 Ottawa Greek Business Directory
               </Typography>
             </Button>
-          </Toolbar>
+          </Box>
 
           <Button
             variant="contained"

@@ -31,6 +31,7 @@
         "address": "4220 Upper Dwyer Hill Rd, Arnprior, ON K7S 3G7",
         "phone": "(613) 555-5678",
         "website": "https://athensbakery.ca",
+        "email": "info@olympiaottawa.com",
         "hours": {
             "monday": "7:00 AM - 6:00 PM",
             "tuesday": "7:00 AM - 6:00 PM",
@@ -44,7 +45,7 @@
             "lat": 45.37665251809968, 
             "lng": -76.26272130000402
         },
-        "image": "/tempIcon.png"
+        "image": "/ogbd-logo.png"
     },
     {
         "id": "2",
@@ -52,7 +53,8 @@
         "categories": ["Landscape"],
         "description": "Professional landscaping and outdoor construction services for residential and commercial properties. Quality work guaranteed.",
         "address": "3904 March Rd, Carp, ON K0A 1L0",
-        "phone": "(613) 555-9999",
+        "phone": "",
+        "email": "info@olympiaottawa.com",
         "hours": {
             "monday": "1:00 PM - 7:00 PM",
             "tuesday": "1:00 PM - 7:00 PM",
@@ -100,6 +102,7 @@
         "address": "960 Teron Rd, Ottawa, ON K2K 2B6",
         "phone": "(613) 555-5678",
         "website": "https://athensbakery.ca",
+        "email": "info@olympiaottawa.com",
         "hours": {
             "monday": "7:00 AM - 6:00 PM",
             "tuesday": "7:00 AM - 6:00 PM",
@@ -122,6 +125,7 @@
         "description": "Professional landscaping and outdoor construction services for residential and commercial properties. Quality work guaranteed.",
         "address": "7 Hansen Ave, Kanata, ON K2K 2L9",
         "phone": "(613) 555-9999",
+        "email": "info@olympiaottawa.com",
         "hours": {
             "monday": "1:00 PM - 7:00 PM",
             "tuesday": "1:00 PM - 7:00 PM",
@@ -169,6 +173,7 @@
         "address": "2100 Cabot St, Ottawa, ON K1H 6K1",
         "phone": "(613) 555-5678",
         "website": "https://athensbakery.ca",
+        "email": "info@olympiaottawa.com",
         "hours": {
             "monday": "7:00 AM - 6:00 PM",
             "tuesday": "7:00 AM - 6:00 PM",
@@ -191,6 +196,7 @@
         "description": "Professional landscaping and outdoor construction services for residential and commercial properties. Quality work guaranteed.",
         "address": "1755 Old Carp Rd, Kanata, ON K2K 1X7",
         "phone": "(613) 555-9999",
+        "email": "info@olympiaottawa.com",
         "hours": {
             "monday": "1:00 PM - 7:00 PM",
             "tuesday": "1:00 PM - 7:00 PM",
@@ -238,6 +244,7 @@
         "address": "2756 Chamberland St, Rockland, ON K4K 0B8",
         "phone": "(613) 555-5678",
         "website": "https://athensbakery.ca",
+        "email": "info@olympiaottawa.com",
         "hours": {
             "monday": "7:00 AM - 6:00 PM",
             "tuesday": "7:00 AM - 6:00 PM",
@@ -260,6 +267,7 @@
         "description": "Professional landscaping and outdoor construction services for residential and commercial properties. Quality work guaranteed.",
         "address": "2930 French Hill Rd, Cumberland, ON K4C 1K9",
         "phone": "(613) 555-9999",
+        "email": "info@olympiaottawa.com",
         "hours": {
             "monday": "1:00 PM - 7:00 PM",
             "tuesday": "1:00 PM - 7:00 PM",

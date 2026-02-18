@@ -1,6 +1,8 @@
 import { useParams, Link } from 'react-router-dom';
 import businessData from '../data/businesses-en.json';
-import type { Business, DayOfWeek } from '../types/Business';
+import type { Business } from '../types/Business';
+import type { WeekDay } from '../data/constants';
+import { WEEKDAY } from '../data/constants';
 import defaultPhoto from '/images/default-photo.jpg';
 import { useEffect, useState } from 'react';
 import {
@@ -15,24 +17,14 @@ import {
 function Businesspage() {
   //grab the current business' id from the url path on page load
   const { id } = useParams<{ id: string }>();
-  const currentBusiness = businessData.find(
+  const currentBusiness: Business | undefined = businessData.find(
     (param: Business) => param.id === id
   );
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const weekday: DayOfWeek[] = [
-    'sunday',
-    'monday',
-    'tuesday',
-    'wednesday',
-    'thursday',
-    'friday',
-    'saturday',
-  ];
-
   //grab the current day of the week
-  const currDate: DayOfWeek = weekday[new Date().getDay()]; //monday
+  const currDate: WeekDay = WEEKDAY[new Date().getDay()]; //monday
 
   useEffect(() => {
     //check on mount once
@@ -102,7 +94,7 @@ function Businesspage() {
             backgroundColor: 'secondary.light',
             width: '100%',
             position: 'relative',
-            top: { xs: 160, md: 70 },
+            top: { xs: 160, md: 60 },
           }}
         >
           <Button component={Link} to={'/'} variant="text" disableElevation>
@@ -136,7 +128,7 @@ function Businesspage() {
           backgroundColor: 'secondary.light',
           width: '100%',
           position: 'relative',
-          top: { xs: 160, md: 70 },
+          top: { xs: 160, md: 60 },
         }}
       >
         <Button component={Link} to={'/'} variant="text" disableElevation>
@@ -155,7 +147,7 @@ function Businesspage() {
           pt: { xs: 22, md: 10 },
         }}
       >
-        <Typography variant="h1" component="h1">
+        <Typography variant="h3" component="h1" sx={{ py: 3 }}>
           {currentBusiness.name}
         </Typography>
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, py: 1 }}>
@@ -177,33 +169,49 @@ function Businesspage() {
         </Box>
         <Box
           sx={{
-            display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
+            display: 'grid',
+            gridTemplateColumns: { xs: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' },
             gap: 4,
-            pb: 2,
           }}
         >
-          <img
-            src={currentBusiness.image || defaultPhoto}
-            style={{
-              height: 300,
-              objectFit: 'cover',
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: { xs: 'column', md: 'row' },
+              gap: 4,
+              pb: 2,
             }}
-          />
-          <Typography variant="h5" component="p">
-            {currentBusiness.description}
-          </Typography>
-        </Box>
-
-        {/* info and map */}
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: { xs: 'column', md: 'row-reverse' },
-            gap: 1,
-            justifyContent: 'space-between',
-          }}
-        >
+          >
+            <img
+              src={currentBusiness.image || defaultPhoto}
+              style={{
+                width: '100%',
+                height: 300,
+                objectFit: 'cover',
+              }}
+            />
+          </Box>
+          <Box
+            sx={{
+              width: '100%',
+              height: 300,
+              borderRadius: 2,
+              overflow: 'hidden',
+              mb: 2,
+              border: '1px solid',
+              borderColor: 'primary.main',
+            }}
+          >
+            <iframe
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+              src={`https://maps.google.com/maps?q=${currentBusiness.coordinates.lat},${currentBusiness.coordinates.lng}&output=embed`}
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </Box>
           {/* info */}
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
             <Box sx={{ display: 'flex', justifyItems: 'center' }}>
@@ -216,27 +224,40 @@ function Businesspage() {
               <Typography component="pre" sx={{ fontWeight: 900 }}>
                 Phone:{' '}
               </Typography>
+              {currentBusiness.phone ? (
+                <MuiLink
+                  href={`tel:${currentBusiness.phone}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {currentBusiness.phone}
+                </MuiLink>
+              ) : (
+                <Typography component="p">No phone number available</Typography>
+              )}
               <Typography component="p">{currentBusiness.phone}</Typography>
             </Box>
             <Box sx={{ display: 'flex', justifyItems: 'center' }}>
               <Typography component="pre" sx={{ fontWeight: 900 }}>
                 Email:{' '}
               </Typography>
-              <Typography component="p">
-                {currentBusiness.email || 'No email available'}
-              </Typography>
+              <Typography component="p">{currentBusiness.email}</Typography>
             </Box>
             <Box sx={{ display: 'flex', justifyItems: 'center' }}>
               <Typography component="pre" sx={{ fontWeight: 900 }}>
                 Website:{' '}
               </Typography>
-              <MuiLink
-                href={currentBusiness.website}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {currentBusiness.website || 'No website available'}
-              </MuiLink>
+              {currentBusiness.website ? (
+                <MuiLink
+                  href={currentBusiness.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {currentBusiness.website}
+                </MuiLink>
+              ) : (
+                <Typography component="p">No website available</Typography>
+              )}
             </Box>
 
             <Box
@@ -250,7 +271,7 @@ function Businesspage() {
                 Hours:{' '}
               </Typography>
               <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                {weekday.map((day) => (
+                {WEEKDAY.map((day) => (
                   <Typography key={day} component="p">
                     {`${day.charAt(0).toUpperCase() + day.slice(1)}: ${currentBusiness.hours[day]}`}
                     {day === currDate && (
@@ -270,29 +291,9 @@ function Businesspage() {
               </Box>
             </Box>
           </Box>
-
-          {/* map */}
-          <Box
-            sx={{
-              height: 400,
-              width: 400,
-              borderRadius: 2,
-              overflow: 'hidden',
-              mb: 2,
-              border: '1px solid',
-              borderColor: 'primary.main',
-            }}
-          >
-            <iframe
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              loading="lazy"
-              src={`https://maps.google.com/maps?q=${currentBusiness.coordinates.lat},${currentBusiness.coordinates.lng}&output=embed`}
-              allowFullScreen
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </Box>
+          <Typography variant="h5" component="p">
+            {currentBusiness.description}
+          </Typography>
         </Box>
       </Container>
     </>
