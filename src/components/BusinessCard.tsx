@@ -6,7 +6,6 @@ import {
   Typography,
   Box,
   Button,
-  Icon,
 } from '@mui/material';
 
 import { Link } from 'react-router-dom';

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import type { Business } from '../types/Business';
 import businessData from '../data/businesses-en.json'; //synchronous data bundled at build time --> would need to be an async function if a backend is added
 import FilterBar from '../components/FilterBar';
-import { CATEGORIES, SORTBY } from '../data/constants';
+import { CATEGORIES } from '../data/constants';
 
 function HomePage() {
   const allBusinessInfo = businessData as Business[]; //create an array of Businesses to store the contents of the JSON file
@@ -216,7 +216,7 @@ function HomePage() {
               color="primary"
               count={Math.ceil(sortedBusinesses.length / numEntriesPerPage)}
               page={page}
-              onChange={(event, value) => {
+              onChange={(_, value) => {
                 setPage(value);
                 document.body.scrollTop = 0; // For Safari
                 document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera

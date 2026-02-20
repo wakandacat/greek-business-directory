@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
+import { AppBar, Typography, Button, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 function Navbar() {

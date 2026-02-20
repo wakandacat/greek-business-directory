@@ -1,7 +1,5 @@
 import {
-  Container,
   Typography,
-  Link as MuiLink,
   Box,
   TextField,
   Button,
@@ -16,7 +14,7 @@ import {
 import { CATEGORIES } from '../data/constants';
 import { useState, type FormEvent } from 'react';
 import type { SelectChangeEvent } from '@mui/material/Select';
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs from 'dayjs';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import type { HoursRecord, DayHours } from '../types/Business';
 
@@ -79,7 +77,7 @@ function ContactForm() {
     e.preventDefault();
 
     //check form info
-    const hasInvalidHours = Object.entries(hours).some(([day, times]) => {
+    const hasInvalidHours = Object.values(hours).some((times) => {
       if (times.closed) return false;
       return !times.open || !times.close;
     });
