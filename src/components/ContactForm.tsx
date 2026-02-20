@@ -108,9 +108,12 @@ function ContactForm() {
         setIndustryArr([]);
         setHours({ 'Every Day': defaultHours() });
       } else {
+        const errorText = await response.text();
+        console.error('Form submission error:', errorText);
         alert('Error submitting form. Please try again.');
       }
     } catch (error) {
+      console.error('Network error:', error);
       alert('Error: ' + error);
     }
   };
