@@ -3,7 +3,7 @@ import businessData from '../data/businesses-en.json';
 import type { Business } from '../types/Business';
 import type { WeekDay } from '../data/constants';
 import { WEEKDAY } from '../data/constants';
-import defaultPhoto from '/images/default-photo.jpg';
+import defaultPhoto from '/images/default-photo.png';
 import { useEffect, useState } from 'react';
 import {
   Container,
@@ -235,13 +235,18 @@ function Businesspage() {
               ) : (
                 <Typography component="p">No phone number available</Typography>
               )}
-              <Typography component="p">{currentBusiness.phone}</Typography>
             </Box>
             <Box sx={{ display: 'flex', justifyItems: 'center' }}>
               <Typography component="pre" sx={{ fontWeight: 900 }}>
                 Email:{' '}
               </Typography>
-              <Typography component="p">{currentBusiness.email}</Typography>
+              <MuiLink
+                target="_blank"
+                rel="noopener noreferrer"
+                href={`mailto:${currentBusiness.email}`}
+              >
+                {currentBusiness.email}
+              </MuiLink>
             </Box>
             <Box sx={{ display: 'flex', justifyItems: 'center' }}>
               <Typography component="pre" sx={{ fontWeight: 900 }}>

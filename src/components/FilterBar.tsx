@@ -8,6 +8,7 @@ import {
   TextField,
   Button,
 } from '@mui/material';
+import { CATEGORIES, SORTBY } from '../data/constants';
 
 interface FilterProps {
   categoryFilter: string;
@@ -21,22 +22,6 @@ interface FilterProps {
 }
 
 function FilterBar(props: FilterProps) {
-  const CATEGORIES = [
-    'All',
-    'Restaurant',
-    'Bakery',
-    'Café',
-    'Services',
-    'Retail',
-    'Professional Services',
-    'Construction',
-    'Landscape',
-    'Healthcare',
-    'Other',
-  ];
-
-  const SORTBY = ['None', 'Alphabetical', 'Closest'];
-
   return (
     <Box
       sx={{

@@ -17,34 +17,37 @@ function Navbar() {
             flexDirection: { xs: 'column', md: 'row' },
           }}
         >
-          <Box sx={{ display: 'flex' }}>
-            <Button
-              disableElevation
-              variant="contained"
-              color="secondary"
-              component={Link}
-              to={'/'}
+          {/* <Box
+            sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }}
+          > */}
+          <Button
+            disableElevation
+            variant="contained"
+            color="secondary"
+            component={Link}
+            to={'/'}
+            sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }}
+          >
+            <Box
+              sx={{
+                pr: 1,
+                display: 'flex',
+                justifyContent: 'center',
+                alignContent: 'center',
+              }}
             >
-              <Box
-                sx={{
-                  pr: 1,
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignContent: 'center',
-                }}
-              >
-                <img
-                  src="/ogbd-logo.png"
-                  alt="site logo"
-                  loading="lazy"
-                  height="50"
-                />
-              </Box>
-              <Typography variant="h6" component="p">
-                Ottawa Greek Business Directory
-              </Typography>
-            </Button>
-          </Box>
+              <img
+                src="/ogbd-logo.png"
+                alt="site logo"
+                loading="lazy"
+                height="50"
+              />
+            </Box>
+            <Typography variant="h6" component="p">
+              Ottawa Greek Business Directory
+            </Typography>
+          </Button>
+          {/* </Box> */}
 
           <Button
             variant="contained"
@@ -58,11 +61,11 @@ function Navbar() {
             </Typography>
           </Button>
         </Box>
-        <Button variant="contained" color="secondary" disableElevation>
+        {/* <Button variant="contained" color="secondary" disableElevation>
           <Typography variant="h6" component="p">
             Language
           </Typography>
-        </Button>
+        </Button> */}
       </Box>
     </AppBar>
   );

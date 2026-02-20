@@ -11,6 +11,8 @@ import {
 
 import { Link } from 'react-router-dom';
 
+import defaultPhoto from '/images/default-photo.png';
+
 interface propType {
   id: string;
   name: string;
@@ -28,7 +30,7 @@ function BusinessCard(props: propType) {
           component="img"
           alt="business logo"
           height="200"
-          image={props.image}
+          image={props.image || defaultPhoto}
           sx={{ objectFit: 'cover' }}
         />
         <CardContent>

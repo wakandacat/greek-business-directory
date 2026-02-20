@@ -1,13 +1,13 @@
 [
     {
         "id": "0",
-        "name": "Alitheia",
-        "categories": ["Laundry"],
-        "description" : "Family-owned Greek restaurant serving authentic Mediterranean cuisine since 1985. Specializing in traditional dishes and warm hospitality.",
+        "name": "Alitheia Cleaning Services",
+        "categories": ["Cleaning"],
+        "description" : "Professional cleaning services for residential and commercial properties. Specializing in deep cleaning, move-in/move-out cleaning, and regular maintenance.",
         "address": "1186 Bank St, Ottawa, ON K1S 3X9",
         "phone": "(613) 555-1234",
-        "website": "https://olympiaottawa.com",
-        "email": "info@olympiaottawa.com",
+        "website": "https://alitheiaottawa.com",
+        "email": "info@alitheiaottawa.com",
         "hours": {
             "monday": "11:00 AM - 9:00 PM",
             "tuesday": "11:00 AM - 9:00 PM",
@@ -20,18 +20,17 @@
         "coordinates": {
             "lat": 45.39192216986515,
             "lng": -75.68179839182066
-        },
-        "image": "/images/default-photo.jpg"
+        }
     },
     {
         "id": "1",
-        "name": "Athens Bakery",
-        "categories": ["Bakery"],
-        "description": "Traditional Greek bakery offering fresh pastries, bread, and desserts daily. Known for our authentic baklava and spanakopita.",
+        "name": "Athens Playparks",
+        "categories": ["Entertainment"],
+        "description": "Family-friendly entertainment center with indoor and outdoor play areas, arcade games, and a café. Perfect for kids of all ages to have fun and stay active.",
         "address": "4220 Upper Dwyer Hill Rd, Arnprior, ON K7S 3G7",
         "phone": "(613) 555-5678",
-        "website": "https://athensbakery.ca",
-        "email": "info@olympiaottawa.com",
+        "website": "https://athensplayparks.ca",
+        "email": "info@athensplayparks.ca",
         "hours": {
             "monday": "7:00 AM - 6:00 PM",
             "tuesday": "7:00 AM - 6:00 PM",
@@ -44,8 +43,7 @@
         "coordinates": {
             "lat": 45.37665251809968, 
             "lng": -76.26272130000402
-        },
-        "image": "/ogbd-logo.png"
+        }
     },
     {
         "id": "2",
@@ -54,7 +52,7 @@
         "description": "Professional landscaping and outdoor construction services for residential and commercial properties. Quality work guaranteed.",
         "address": "3904 March Rd, Carp, ON K0A 1L0",
         "phone": "",
-        "email": "info@olympiaottawa.com",
+        "email": "info@sunnyyardmaintenance.com",
         "hours": {
             "monday": "1:00 PM - 7:00 PM",
             "tuesday": "1:00 PM - 7:00 PM",
@@ -72,9 +70,9 @@
     },
     {
         "id": "3",
-        "name": "Olympia",
+        "name": "Olympia Thrift Store",
         "categories": ["Retail"],
-        "description" : "Family-owned Greek restaurant serving authentic Mediterranean cuisine since 1985. Specializing in traditional dishes and warm hospitality.",
+        "description" : "Family-owned Greek thrift store offering gently used clothing, furniture, and household items. Specializing in authentic Greek and Mediterranean items.",
         "address": "2590 Carp Rd, Carp, ON K0A 1L0",
         "phone": "(613) 555-1234",
         "website": "https://olympiaottawa.com",
@@ -92,17 +90,17 @@
             "lat": 45.29713567600164, 
             "lng": -75.97658040263998
         },
-        "image": "/images/greece.jpg"
+        "image": "/images/retail.jpg"
     },
     {
         "id": "4",
-        "name": "Kliro",
-        "categories": ["Healthcare", "Services"],
-        "description": "Traditional Greek bakery offering fresh pastries, bread, and desserts daily. Known for our authentic baklava and spanakopita.",
+        "name": "Kliro Health & Wellness",
+        "categories": ["Healthcare"],
+        "description": "Professional health and wellness services for individuals and families. Offering personalized wellness programs, nutritional counseling, and holistic care.",
         "address": "960 Teron Rd, Ottawa, ON K2K 2B6",
         "phone": "(613) 555-5678",
-        "website": "https://athensbakery.ca",
-        "email": "info@olympiaottawa.com",
+        "website": "https://klirohealthwellness.com",
+        "email": "info@klirohealthwellness.com",
         "hours": {
             "monday": "7:00 AM - 6:00 PM",
             "tuesday": "7:00 AM - 6:00 PM",
@@ -115,17 +113,16 @@
         "coordinates": {
             "lat": 45.32381357460997, 
             "lng": -75.89275580263902
-        },
-        "image": "/images/bakery.jpg"
+        }
     },
     {
         "id": "5",
-        "name": "123 Construction",
+        "name": "Yorgo's Construction",
         "categories": ["Construction"],
-        "description": "Professional landscaping and outdoor construction services for residential and commercial properties. Quality work guaranteed.",
+        "description": "Construction services for residential and commercial properties. Specializing in home renovations, additions, and outdoor construction projects. Quality work guaranteed.",
         "address": "7 Hansen Ave, Kanata, ON K2K 2L9",
         "phone": "(613) 555-9999",
-        "email": "info@olympiaottawa.com",
+        "email": "info@yorgosconstruction.com",
         "hours": {
             "monday": "1:00 PM - 7:00 PM",
             "tuesday": "1:00 PM - 7:00 PM",
@@ -139,7 +136,7 @@
             "lat": 45.33180276438533, 
             "lng": -75.91768544496676
         },
-        "image": "/images/landscape.jpg"
+        "image": "/images/construction.jpg"
     },
     {
         "id": "6",
@@ -148,8 +145,8 @@
         "description" : "Family-owned Greek restaurant serving authentic Mediterranean cuisine since 1985. Specializing in traditional dishes and warm hospitality.",
         "address": "27 Léonard Ave, Ottawa, ON K1S 4T8",
         "phone": "(613) 555-1234",
-        "website": "https://olympiaottawa.com",
-        "email": "info@olympiaottawa.com",
+        "website": "https://yiayiasrestaurant.com",
+        "email": "info@yiayiasrestaurant.com",
         "hours": {
             "monday": "11:00 AM - 9:00 PM",
             "tuesday": "11:00 AM - 9:00 PM",
@@ -163,17 +160,17 @@
             "lat": 45.39351265929934, 
             "lng": -75.68914797198228
         },
-        "image": "/images/greece.jpg"
+        "image": "/images/restaurant.jpg"
     },
     {
         "id": "7",
         "name": "Cafe Ilios",
-        "categories": ["Bakery", "Café"],
-        "description": "Traditional Greek bakery offering fresh pastries, bread, and desserts daily. Known for our authentic baklava and spanakopita.",
+        "categories": ["Bakery"],
+        "description": "Bakery offering fresh pastries and breads. Experience the taste of Greece with our authentic recipes and warm atmosphere. Perfect for breakfast, lunch, or a sweet treat.",
         "address": "2100 Cabot St, Ottawa, ON K1H 6K1",
         "phone": "(613) 555-5678",
-        "website": "https://athensbakery.ca",
-        "email": "info@olympiaottawa.com",
+        "website": "https://iliosbakery.ca",
+        "email": "info@iliosbakery.ca",
         "hours": {
             "monday": "7:00 AM - 6:00 PM",
             "tuesday": "7:00 AM - 6:00 PM",
@@ -192,11 +189,11 @@
     {
         "id": "8",
         "name": "Zoe Maintenance",
-        "categories": ["Landscape", "Services"],
-        "description": "Professional landscaping and outdoor construction services for residential and commercial properties. Quality work guaranteed.",
+        "categories": ["Landscape", "Construction"],
+        "description": "Professional maintenance and landscaping services for residential and commercial properties. Availble for regular upkeep, seasonal cleanups, and construction projects.",
         "address": "1755 Old Carp Rd, Kanata, ON K2K 1X7",
         "phone": "(613) 555-9999",
-        "email": "info@olympiaottawa.com",
+        "email": "info@zoe-maintenance.com",
         "hours": {
             "monday": "1:00 PM - 7:00 PM",
             "tuesday": "1:00 PM - 7:00 PM",
@@ -209,18 +206,17 @@
         "coordinates": {
             "lat": 45.34521324239308, 
             "lng": -75.97786708729414
-        },
-        "image": "/images/landscape.jpg"
+        }
     },
     {
         "id": "9",
         "name": "Apollo Foods",
-        "categories": ["Restaurant"],
-        "description" : "Family-owned Greek restaurant serving authentic Mediterranean cuisine since 1985. Specializing in traditional dishes and warm hospitality.",
+        "categories": ["Grocery", "Restaurant", "Retail", "Bakery"],
+        "description" : "Greek grocery store and restaurant offering a wide selection of authentic Greek products and delicious meals. Experience the flavors of Greece with our fresh ingredients and traditional recipes.",
         "address": "3773 Carp Rd, Carp, ON K0A 1L0",
         "phone": "(613) 555-1234",
-        "website": "https://olympiaottawa.com",
-        "email": "info@olympiaottawa.com",
+        "website": "https://apollofoods.com",
+        "email": "info@apollofoods.com",
         "hours": {
             "monday": "11:00 AM - 9:00 PM",
             "tuesday": "11:00 AM - 9:00 PM",
@@ -234,17 +230,17 @@
             "lat": 45.346010359379555, 
             "lng": -76.03772620078622
         },
-        "image": "/images/greece.jpg"
+        "image": "/images/grocery.jpg"
     },
     {
         "id": "10",
-        "name": "Grecian Cafe",
-        "categories": ["Bakery", "Café"],
-        "description": "Traditional Greek bakery offering fresh pastries, bread, and desserts daily. Known for our authentic baklava and spanakopita.",
+        "name": "Grecian Graphic Design",
+        "categories": ["Other"],
+        "description": "Professional graphic design services for businesses and individuals. Specializing in branding, logo design, and marketing materials.",
         "address": "2756 Chamberland St, Rockland, ON K4K 0B8",
         "phone": "(613) 555-5678",
-        "website": "https://athensbakery.ca",
-        "email": "info@olympiaottawa.com",
+        "website": "https://greciangraphicdesign.ca",
+        "email": "info@greciangraphicdesign.ca",
         "hours": {
             "monday": "7:00 AM - 6:00 PM",
             "tuesday": "7:00 AM - 6:00 PM",
@@ -257,17 +253,16 @@
         "coordinates": {
             "lat": 45.54437500764492, 
             "lng": -75.30281084680983
-        },
-        "image": "/images/bakery.jpg"
+        }
     },
     {
         "id": "11",
-        "name": "Helios",
-        "categories": ["Landscape", "Construction"],
-        "description": "Professional landscaping and outdoor construction services for residential and commercial properties. Quality work guaranteed.",
+        "name": "Helios Accounting",
+        "categories": ["Professional Services"],
+        "description": "Professional accounting services for small businesses and individuals.",
         "address": "2930 French Hill Rd, Cumberland, ON K4C 1K9",
         "phone": "(613) 555-9999",
-        "email": "info@olympiaottawa.com",
+        "email": "info@heliosaccounting.com",
         "hours": {
             "monday": "1:00 PM - 7:00 PM",
             "tuesday": "1:00 PM - 7:00 PM",
@@ -281,6 +276,6 @@
             "lat": 45.47803727453156, 
             "lng": -75.36306298914057
         },
-        "image": "/images/landscape.jpg"
+        "image": "/images/accounting.jpg"
     }
 ]

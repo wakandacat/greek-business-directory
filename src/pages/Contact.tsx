@@ -29,10 +29,20 @@ function Contact() {
         >
           Ellena Tzavelas
         </MuiLink>
-        , a member of the Hellenic Community of Ottawa (HCO) as a passion
-        project. Growing up within the HCO, but lacking knowledge about the
-        various businesses within the community, prompted the creation of this
-        resource. <br />
+        , a member of the{' '}
+        <MuiLink
+          href="https://helleniccommunity.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            color: 'primary.light',
+          }}
+        >
+          Hellenic Community of Ottawa (HCO)
+        </MuiLink>{' '}
+        as a passion project. Growing up within the HCO, but lacking knowledge
+        about the various businesses within the community, prompted the creation
+        of this resource. <br />
         <br />
         This directory is not affiliated with any of the organizations listed
         here, nor with the HCO. If you have any questions or concerns about the

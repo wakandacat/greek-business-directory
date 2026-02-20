@@ -2,13 +2,14 @@ export const CATEGORIES = [
   'All',
   'Restaurant',
   'Bakery',
-  'Café',
-  'Services',
+  'Grocery',
   'Retail',
-  'Professional Services',
+  'Entertainment',
   'Construction',
   'Landscape',
   'Healthcare',
+  'Cleaning',
+  'Professional Services',
   'Other',
 ];
 
