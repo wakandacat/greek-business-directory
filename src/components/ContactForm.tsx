@@ -44,7 +44,7 @@ function ContactForm() {
   //business hours time picker values
   const [scheduleMode, setScheduleMode] = useState<string>('everyday');
   const [hours, setHours] = useState<HoursRecord>({
-    'Every Day': defaultHours(),
+    'Every-Day': defaultHours(),
   });
 
   //toggle between  different hour schedules and show/hide the timepicker fields
@@ -53,11 +53,11 @@ function ContactForm() {
     setScheduleMode(mode);
 
     if (mode === 'everyday') {
-      setHours({ 'Every Day': defaultHours() });
+      setHours({ 'Every-Day': defaultHours() });
     } else if (mode === 'weekday-weekend') {
       setHours({
-        'Monday - Friday': defaultHours(),
-        'Saturday - Sunday': defaultHours(),
+        'Monday-Friday': defaultHours(),
+        'Saturday-Sunday': defaultHours(),
       });
     } else if (mode === 'individual') {
       setHours({
@@ -106,7 +106,7 @@ function ContactForm() {
         alert('Thank you! Your submission has been received.');
         form.reset();
         setIndustryArr([]);
-        setHours({ 'Every Day': defaultHours() });
+        setHours({ 'Every-Day': defaultHours() });
       } else {
         const errorText = await response.text();
         console.error('Form submission error:', errorText);
