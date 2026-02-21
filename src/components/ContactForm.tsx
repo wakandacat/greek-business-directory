@@ -17,6 +17,7 @@ import type { SelectChangeEvent } from '@mui/material/Select';
 import dayjs from 'dayjs';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import type { HoursRecord, DayHours } from '../types/Business';
+import ReactGA from 'react-ga4';
 
 function ContactForm() {
   const [industryArr, setIndustryArr] = useState<string[]>([]);
@@ -75,6 +76,13 @@ function ContactForm() {
   //submit the form to netlify
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    //google analytics form submission tracking
+    ReactGA.event({
+      category: 'Form',
+      action: 'Form Submission',
+      label: 'Contact Form',
+    });
 
     //check form info
     const hasInvalidHours = Object.values(hours).some((times) => {

@@ -13,6 +13,7 @@ import {
   Link as MuiLink,
   Button,
 } from '@mui/material';
+import ReactGA from 'react-ga4';
 
 function Businesspage() {
   //grab the current business' id from the url path on page load
@@ -30,6 +31,16 @@ function Businesspage() {
     //check on mount once
     setIsOpen(currentlyOpen());
 
+    //track this page view in Google Analytics
+    if (currentBusiness) {
+      //ensure currentbusiness is defined
+      ReactGA.event({
+        category: 'Business',
+        action: 'View Business Page',
+        label: currentBusiness.name,
+      });
+    }
+
     // check every minute
     const interval = setInterval(() => {
       setIsOpen(currentlyOpen());
@@ -38,6 +49,17 @@ function Businesspage() {
     //cleanup on unmount
     return () => clearInterval(interval);
   }, [currentBusiness]);
+
+  //track business page clicks in google analytics
+  function trackClick(action: string) {
+    if (currentBusiness) {
+      ReactGA.event({
+        category: 'Engagement',
+        action: action,
+        label: currentBusiness.name,
+      });
+    }
+  }
 
   //ensure we are at the top of the page
   document.body.scrollTop = 0; // For Safari
@@ -210,6 +232,7 @@ function Businesspage() {
               src={`https://maps.google.com/maps?q=${currentBusiness.coordinates.lat},${currentBusiness.coordinates.lng}&output=embed`}
               allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"
+              onClick={() => trackClick('Map Click')}
             />
           </Box>
           {/* info */}
@@ -229,6 +252,7 @@ function Businesspage() {
                   href={`tel:${currentBusiness.phone}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackClick('Phone Click')}
                 >
                   {currentBusiness.phone}
                 </MuiLink>
@@ -244,6 +268,7 @@ function Businesspage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 href={`mailto:${currentBusiness.email}`}
+                onClick={() => trackClick('Email Click')}
               >
                 {currentBusiness.email}
               </MuiLink>
@@ -257,6 +282,7 @@ function Businesspage() {
                   href={currentBusiness.website}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackClick('Website Click')}
                 >
                   {currentBusiness.website}
                 </MuiLink>

@@ -9,6 +9,11 @@ import Footer from './components/Footer';
 import { Box } from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import ReactGA from 'react-ga4';
+
+// initialize Google Analytics
+//reference for setup https://www.dhiwise.com/post/a-guide-to-integrating-react-ga4-in-web-app
+ReactGA.initialize('G-SX06QKHDG6');
 
 //custom site theme
 const theme = createTheme({

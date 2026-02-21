@@ -5,6 +5,7 @@ import type { Business } from '../types/Business';
 import businessData from '../data/businesses-en.json'; //synchronous data bundled at build time --> would need to be an async function if a backend is added
 import FilterBar from '../components/FilterBar';
 import { CATEGORIES } from '../data/constants';
+import ReactGA from 'react-ga4';
 
 function HomePage() {
   const allBusinessInfo = businessData as Business[]; //create an array of Businesses to store the contents of the JSON file
@@ -50,6 +51,12 @@ function HomePage() {
   function handleSearch() {
     let searchTerm = searchValue.toLowerCase().trim();
 
+    ReactGA.event({
+      category: 'Search',
+      action: 'Search Query',
+      label: searchTerm,
+    });
+
     let searchFilteredBusinesses = allBusinessInfo.filter(
       (business) =>
         business.name.toLowerCase().includes(searchTerm) ||
@@ -62,6 +69,14 @@ function HomePage() {
 
   function handleFilter(business: Business) {
     //CATEGORIESFILTER
+
+    //track filter changes in google analytics
+    ReactGA.event({
+      category: 'Filter',
+      action: 'Filter Selected',
+      label: selectedCategory,
+    });
+
     //return all businesses when the filter is 'All'
     if (selectedCategory === 'All') {
       return true;
@@ -116,6 +131,13 @@ function HomePage() {
 
   //sorting filters
   function handleSort() {
+    //track sorting with google analytics
+    ReactGA.event({
+      category: 'Filter',
+      action: 'Sort Selected',
+      label: selectedSort,
+    });
+
     if (selectedSort === 'Alphabetical') {
       return [...filteredBusinesses].sort((a, b) =>
         a.name.localeCompare(b.name)
