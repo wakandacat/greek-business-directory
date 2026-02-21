@@ -64,7 +64,7 @@ function Contact() {
       </Typography>
       <Typography component="p">
         Fill out the form with your business information to add it to the
-        system. Fileds marked with an asterisk (*) are required.
+        system. Fields marked with an asterisk (*) are required.
       </Typography>
       <ContactForm />
     </Container>

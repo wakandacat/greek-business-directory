@@ -107,6 +107,7 @@ function ContactForm() {
         form.reset();
         setIndustryArr([]);
         setHours({ 'Every-Day': defaultHours() });
+        setScheduleMode('everyday');
       } else {
         const errorText = await response.text();
         console.error('Form submission error:', errorText);
@@ -351,7 +352,7 @@ function ContactForm() {
         />
       </Box>
 
-      <Box>
+      {/* <Box>
         <InputLabel id="businessImage" sx={{ color: 'text.primary' }}>
           Business Image or Logo
         </InputLabel>
@@ -362,7 +363,7 @@ function ContactForm() {
           placeholder="Business Image or Logo"
           fullWidth
         />
-      </Box>
+      </Box> */}
 
       <Box>
         <InputLabel id="businessDesc" sx={{ color: 'text.primary' }}>
