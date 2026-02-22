@@ -78,10 +78,8 @@ function ContactForm() {
     e.preventDefault();
 
     //google analytics form submission tracking
-    ReactGA.event({
-      category: 'Form',
-      action: 'Form Submission',
-      label: 'Contact Form',
+    ReactGA.gtag('event', 'form_submission', {
+      form_type: 'contact',
     });
 
     //check form info

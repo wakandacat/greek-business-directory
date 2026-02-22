@@ -51,10 +51,8 @@ function HomePage() {
   function handleSearch() {
     let searchTerm = searchValue.toLowerCase().trim();
 
-    ReactGA.event({
-      category: 'Search',
-      action: 'Search Query',
-      label: searchTerm,
+    ReactGA.gtag('event', 'search', {
+      search_term: searchTerm,
     });
 
     let searchFilteredBusinesses = allBusinessInfo.filter(
@@ -71,10 +69,8 @@ function HomePage() {
     //CATEGORIESFILTER
 
     //track filter changes in google analytics
-    ReactGA.event({
-      category: 'Filter',
-      action: 'Filter Selected',
-      label: selectedCategory,
+    ReactGA.gtag('event', 'filter', {
+      filter_term: selectedCategory,
     });
 
     //return all businesses when the filter is 'All'
@@ -132,10 +128,8 @@ function HomePage() {
   //sorting filters
   function handleSort() {
     //track sorting with google analytics
-    ReactGA.event({
-      category: 'Filter',
-      action: 'Sort Selected',
-      label: selectedSort,
+    ReactGA.gtag('event', 'sort', {
+      sort_term: selectedSort,
     });
 
     if (selectedSort === 'Alphabetical') {

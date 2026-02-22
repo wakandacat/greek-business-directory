@@ -34,10 +34,9 @@ function Businesspage() {
     //track this page view in Google Analytics
     if (currentBusiness) {
       //ensure currentbusiness is defined
-      ReactGA.event({
-        category: 'Business',
-        action: 'View Business Page',
-        label: currentBusiness.name,
+      ReactGA.gtag('event', 'business_view', {
+        business_name: currentBusiness.name,
+        business_id: currentBusiness.id,
       });
     }
 
@@ -53,10 +52,10 @@ function Businesspage() {
   //track business page clicks in google analytics
   function trackClick(action: string) {
     if (currentBusiness) {
-      ReactGA.event({
-        category: 'Engagement',
-        action: action,
-        label: currentBusiness.name,
+      ReactGA.gtag('event', 'engagement_click', {
+        engagement_action: action,
+        business_name: currentBusiness.name,
+        business_id: currentBusiness.id,
       });
     }
   }
