@@ -9,13 +9,14 @@ export interface Business {
   address: string;
   phone?: string;
   website?: string;
-  email: string;
+  email?: string;
   hours: Record<WeekDay, string>;
   coordinates: {
     lat: number;
     lng: number;
   };
   image?: string;
+  viewable: boolean;
 }
 
 export interface DayHours {

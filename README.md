@@ -1,73 +1,17 @@
-# React + TypeScript + Vite
+# Ottawa Greek Business Directory
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This directory was created to help the Greek community in Ottawa discover and support local Greek-owned businesses.
 
-Currently, two official plugins are available:
+## About the Ottawa Greek Business Directory
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project was created by [Ellena Tzavelas](https://wakandacat.github.io/ellena-tzavelas/), a member of the [Hellenic Community of Ottawa (HCO)](https://helleniccommunity.com/) as a passion project. Growing up within the HCO, but lacking knowledge about the various businesses within the community, prompted the creation of this resource.
 
-## React Compiler
+This directory is not affiliated with any of the organizations listed here, nor with the HCO. If you have any questions or concerns about the content on this site, please contact ellena.tzavelas@gmail.com.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Development of the Ottawa Greek Business Directory
 
-## Expanding the ESLint configuration
+This site was created using React, Typescript, Material UI components, and makes use of Google Analytics. The site is deployed with Netlify, and leverages its' built-in form handling features.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features of the Ottawa Greek Business Directory
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This site has three pages. The landing page is the Homepage where users can search, filter and sort a list of businesses. Clicking on a business in the list will route the user to that businesses' Info page which will list all the details of that business. The final page is the Contact page where users can submit a form to add their business to the site.

@@ -8,7 +8,10 @@ import { CATEGORIES } from '../data/constants';
 import ReactGA from 'react-ga4';
 
 function HomePage() {
-  const allBusinessInfo = businessData as Business[]; //create an array of Businesses to store the contents of the JSON file
+  //only grab the viewable businesses
+  const allBusinessInfo = (businessData as Business[]).filter(
+    (business) => business.viewable
+  ); //create an array of Businesses to store the contents of the JSON file
 
   //pagination
   const numEntriesPerPage = 9;
@@ -43,6 +46,20 @@ function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState('All'); //industry dropdown
   const [selectedSort, setSelectedSort] = useState('None'); //sort dropdown
 
+  useEffect(() => {
+    ReactGA.gtag('event', 'search', {
+      search_term: searchValue.toLowerCase().trim(),
+    });
+  }, [searchValue]);
+
+  useEffect(() => {
+    ReactGA.gtag('event', 'filter', { filter_term: selectedCategory });
+  }, [selectedCategory]);
+
+  useEffect(() => {
+    ReactGA.gtag('event', 'sort', { sort_term: selectedSort });
+  }, [selectedSort]);
+
   //calculate the businesses to render based on the filters
   const searchBusiness = handleSearch(); //search first
   const filteredBusinesses = searchBusiness.filter(handleFilter); //then filter
@@ -50,10 +67,6 @@ function HomePage() {
 
   function handleSearch() {
     let searchTerm = searchValue.toLowerCase().trim();
-
-    ReactGA.gtag('event', 'search', {
-      search_term: searchTerm,
-    });
 
     let searchFilteredBusinesses = allBusinessInfo.filter(
       (business) =>
@@ -67,11 +80,6 @@ function HomePage() {
 
   function handleFilter(business: Business) {
     //CATEGORIESFILTER
-
-    //track filter changes in google analytics
-    ReactGA.gtag('event', 'filter', {
-      filter_term: selectedCategory,
-    });
 
     //return all businesses when the filter is 'All'
     if (selectedCategory === 'All') {
@@ -91,6 +99,35 @@ function HomePage() {
     } else if (business.categories.includes(selectedCategory)) {
       return true;
     }
+  }
+
+  //sorting filters
+  function handleSort() {
+    if (selectedSort === 'Alphabetical') {
+      return [...filteredBusinesses].sort((a, b) =>
+        a.name.localeCompare(b.name)
+      ); //ascending order A to Z
+    } else if (selectedSort === 'Closest') {
+      if (!userLocation) {
+        //no location available
+        return filteredBusinesses;
+      }
+      //calculate distances between business coords
+      return [...filteredBusinesses].sort((a, b) => {
+        const distanceA = calculateDistance(userLocation, a.coordinates);
+        const distanceB = calculateDistance(userLocation, b.coordinates);
+
+        return distanceA - distanceB;
+      });
+    } else {
+      return filteredBusinesses; //default sort order
+    }
+  }
+
+  function clearFilters() {
+    setSearchValue('');
+    setSelectedCategory('All');
+    setSelectedSort('None');
   }
 
   //----------------calculating distance functions reference: https://dev.to/ayushman/measure-distance-between-two-locations-in-javascript-using-the-haversine-formula-7dc----//
@@ -124,40 +161,6 @@ function HomePage() {
     return distance;
   }
   //--------------------------end of reference-------------------------
-
-  //sorting filters
-  function handleSort() {
-    //track sorting with google analytics
-    ReactGA.gtag('event', 'sort', {
-      sort_term: selectedSort,
-    });
-
-    if (selectedSort === 'Alphabetical') {
-      return [...filteredBusinesses].sort((a, b) =>
-        a.name.localeCompare(b.name)
-      ); //ascending order A to Z
-    } else if (selectedSort === 'Closest') {
-      if (!userLocation) {
-        //no location available
-        return filteredBusinesses;
-      }
-      //calculate distances between business coords
-      return [...filteredBusinesses].sort((a, b) => {
-        const distanceA = calculateDistance(userLocation, a.coordinates);
-        const distanceB = calculateDistance(userLocation, b.coordinates);
-
-        return distanceA - distanceB;
-      });
-    } else {
-      return filteredBusinesses; //default sort order
-    }
-  }
-
-  function clearFilters() {
-    setSearchValue('');
-    setSelectedCategory('All');
-    setSelectedSort('None');
-  }
 
   //calculate the businesses to render based on the pagination
   const startIndex = (page - 1) * numEntriesPerPage;
@@ -222,6 +225,7 @@ function HomePage() {
                 description={business.description}
                 address={business.address}
                 image={business.image}
+                searchTerm={searchValue.trim()}
               ></BusinessCard>
             ))}
           </Box>

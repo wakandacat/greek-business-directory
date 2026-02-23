@@ -30,6 +30,7 @@ function Navbar() {
           >
             <Box
               sx={{
+                p: 1,
                 pr: 1,
                 display: 'flex',
                 justifyContent: 'center',
@@ -40,7 +41,7 @@ function Navbar() {
                 src="/ogbd-logo.png"
                 alt="site logo"
                 loading="lazy"
-                height="50"
+                height="40"
               />
             </Box>
             <Typography variant="h6" component="p">

@@ -263,14 +263,18 @@ function Businesspage() {
               <Typography component="pre" sx={{ fontWeight: 900 }}>
                 Email:{' '}
               </Typography>
-              <MuiLink
-                target="_blank"
-                rel="noopener noreferrer"
-                href={`mailto:${currentBusiness.email}`}
-                onClick={() => trackClick('Email Click')}
-              >
-                {currentBusiness.email}
-              </MuiLink>
+              {currentBusiness.email ? (
+                <MuiLink
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={`mailto:${currentBusiness.email}`}
+                  onClick={() => trackClick('Email Click')}
+                >
+                  {currentBusiness.email}
+                </MuiLink>
+              ) : (
+                <Typography component="p">No email available</Typography>
+              )}
             </Box>
             <Box sx={{ display: 'flex', justifyItems: 'center' }}>
               <Typography component="pre" sx={{ fontWeight: 900 }}>

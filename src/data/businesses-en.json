@@ -20,7 +20,8 @@
         "coordinates": {
             "lat": 45.39192216986515,
             "lng": -75.68179839182066
-        }
+        },
+        "viewable": true
     },
     {
         "id": "1",
@@ -41,9 +42,10 @@
             "sunday": "9:00 AM - 3:00 PM"
         },
         "coordinates": {
-            "lat": 45.37665251809968, 
+            "lat": 45.37665251809968,
             "lng": -76.26272130000402
-        }
+        },
+        "viewable": true
     },
     {
         "id": "2",
@@ -66,7 +68,8 @@
             "lat": 45.26940773412047,
             "lng": -76.12148431613325
         },
-        "image": "/images/landscape.jpg"
+        "image": "/images/landscape.jpg",
+        "viewable": true
     },
     {
         "id": "3",
@@ -90,7 +93,8 @@
             "lat": 45.29713567600164, 
             "lng": -75.97658040263998
         },
-        "image": "/images/retail.jpg"
+        "image": "/images/retail.jpg",
+        "viewable": true
     },
     {
         "id": "4",
@@ -111,9 +115,10 @@
             "sunday": "9:00 AM - 3:00 PM"
         },
         "coordinates": {
-            "lat": 45.32381357460997, 
+            "lat": 45.32381357460997,
             "lng": -75.89275580263902
-        }
+        },
+        "viewable": true
     },
     {
         "id": "5",
@@ -136,7 +141,8 @@
             "lat": 45.33180276438533, 
             "lng": -75.91768544496676
         },
-        "image": "/images/construction.jpg"
+        "image": "/images/construction.jpg",
+        "viewable": true
     },
     {
         "id": "6",
@@ -160,7 +166,8 @@
             "lat": 45.39351265929934, 
             "lng": -75.68914797198228
         },
-        "image": "/images/restaurant.jpg"
+        "image": "/images/restaurant.jpg",
+        "viewable": true
     },
     {
         "id": "7",
@@ -184,7 +191,8 @@
             "lat": 45.390284587314035,
             "lng": -75.6721718157329
         },
-        "image": "/images/bakery.jpg"
+        "image": "/images/bakery.jpg",
+        "viewable": true
     },
     {
         "id": "8",
@@ -204,9 +212,10 @@
             "sunday": "Closed"
         },
         "coordinates": {
-            "lat": 45.34521324239308, 
+            "lat": 45.34521324239308,
             "lng": -75.97786708729414
-        }
+        },
+        "viewable": true
     },
     {
         "id": "9",
@@ -230,7 +239,8 @@
             "lat": 45.346010359379555, 
             "lng": -76.03772620078622
         },
-        "image": "/images/grocery.jpg"
+        "image": "/images/grocery.jpg",
+        "viewable": true
     },
     {
         "id": "10",
@@ -251,9 +261,10 @@
             "sunday": "9:00 AM - 3:00 PM"
         },
         "coordinates": {
-            "lat": 45.54437500764492, 
+            "lat": 45.54437500764492,
             "lng": -75.30281084680983
-        }
+        },
+        "viewable": true
     },
     {
         "id": "11",
@@ -276,6 +287,82 @@
             "lat": 45.47803727453156, 
             "lng": -75.36306298914057
         },
-        "image": "/images/accounting.jpg"
+        "image": "/images/accounting.jpg",
+        "viewable": true
+    },
+    {
+        "id": "12",
+        "name": "Adelphia Floor Surfaces Ltd.",
+        "categories": ["Construction"],
+        "description": "Quality flooring for any space.",
+        "address": "110 Bentley Ave #26, Nepean, ON K2E 6T9",
+        "phone": "+1 (613) 225 8728",
+        "website": "http://adelphiafloorsurfaces.com/index.html",
+        "email": "info@adelphiafloorsurfaces.com",
+        "hours": {
+            "monday": "7:30 AM - 4:00 PM",
+            "tuesday": "7:30 AM - 4:00 PM",
+            "wednesday": "7:30 AM - 4:00 PM",
+            "thursday": "7:30 AM - 4:00 PM",
+            "friday": "7:30 AM - 4:00 PM",
+            "saturday": "Closed",
+            "sunday": "Closed"
+        },
+        "coordinates": {
+            "lat": 45.33489564128191,
+            "lng": -75.71272374603156
+        },
+        "image": "/images/adelphia-logo-dark.png",
+        "viewable": false
+    },
+    {
+        "id": "13",
+        "name": "EVOO Greek Kitchen",
+        "categories": ["Restaurant"],
+        "description": "EVOO Greek Kitchen, located in Ottawa, is a contemporary restaurant that blends traditional Greek flavors with a modern twist. Their menu features a variety of authentic Mediterranean dishes, from souvlaki to fresh seafood, all prepared using high-quality ingredients. The warm, welcoming atmosphere makes it ideal for both casual meals and special occasions. They also offer catering services and an extensive wine list to complement their dishes.",
+        "address": "438 Preston St, Ottawa, Ontario K1S 4N4",
+        "phone": " (613) 695 3860",
+        "website": "https://evoogreekkitchen.ca/",
+        "email": "info@evoogreekkitchen.ca",
+        "hours": {
+            "monday": "Closed",
+            "tuesday": "11:30 AM - 10:00 PM",
+            "wednesday": "11:30 AM - 10:00 PM",
+            "thursday": "11:30 AM - 11:00 PM",
+            "friday": "11:30 AM - 11:00 PM",
+            "saturday": "11:30 AM - 11:00 PM",
+            "sunday": "10:00 AM - 10:00 PM"
+        },
+        "coordinates": {
+            "lat": 45.399350500934126,
+            "lng": -75.70881912883596
+        },
+        "image": "/images/evoo-image.jpg",
+        "viewable": false
+    }
+    ,
+    {
+        "id": "14",
+        "name": "Argos Carpets and Flooring",
+        "categories": ["Construction"],
+        "description": "Argos Carpets is a full-service residential and commercial flooring contractor designed to provide customers with what is most important to them; low cost, superior service, and unmatched quality. At Argos Carpets we approach each project as a team and ensure our customers are pleased with every aspect of their flooring project.",
+        "address": "1914 Merivale Road Ottawa, Ontario, K2G 1E8",
+        "phone": " (613) 226-6573",
+        "website": "https://argoscarpets.ca/",
+        "hours": {
+            "monday": "9:00 AM - 6:00 PM",
+            "tuesday": "9:00 AM - 6:00 PM",
+            "wednesday": "9:00 AM - 6:00 PM",
+            "thursday": "9:00 AM - 6:00 PM",
+            "friday": "9:00 AM - 6:00 PM",
+            "saturday": "10:00 AM - 3:00 PM",
+            "sunday": "Closed"
+        },
+        "coordinates": {
+            "lat": 45.32918399584829,
+            "lng": -75.72250445767192
+        },
+        "image": "/images/argos-carpets.jpg",
+        "viewable": false
     }
 ]
