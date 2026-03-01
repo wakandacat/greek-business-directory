@@ -372,7 +372,7 @@ function ContactForm() {
         />
       </Box> */}
 
-      <Box>
+      <Box sx={{ gridColumn: { xs: 'span 1', md: 'span 2' } }}>
         <InputLabel id="businessDesc" sx={{ color: 'text.primary' }}>
           Business Description *
         </InputLabel>

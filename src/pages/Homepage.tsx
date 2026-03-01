@@ -17,7 +17,9 @@ function HomePage() {
   const [entriesPerPage, setEntriesPerPage] = useState<ResultsPerPage>(9);
   const [page, setPage] = useState<number>(1);
 
-  useEffect(() => { setPage(1); }, [entriesPerPage]);
+  useEffect(() => {
+    setPage(1);
+  }, [entriesPerPage]);
 
   //user's position
   const [userLocation, setUserLocation] = useState<{
@@ -166,7 +168,8 @@ function HomePage() {
   //--------------------------end of reference-------------------------
 
   //calculate the businesses to render based on the pagination
-  const effectivePerPage = entriesPerPage === 'All' ? sortedBusinesses.length : entriesPerPage;
+  const effectivePerPage =
+    entriesPerPage === 'All' ? sortedBusinesses.length : entriesPerPage;
   const startIndex = (page - 1) * effectivePerPage;
   const endIndex = startIndex + effectivePerPage;
   const currentPageBusinesses = sortedBusinesses.slice(startIndex, endIndex);
@@ -177,7 +180,7 @@ function HomePage() {
         display: 'flex',
         flexDirection: 'column',
         pb: 5,
-        pt: { xs: 22, md: 10 },
+        pt: 10,
       }}
     >
       <Typography variant="h3" component="h1" sx={{ py: 3 }}>

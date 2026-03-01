@@ -11,8 +11,6 @@ import {
   Box,
   Toolbar,
   Link as MuiLink,
-  Button,
-  Grid,
   Card,
   CardContent,
 } from '@mui/material';
@@ -118,21 +116,21 @@ function Businesspage() {
             backgroundColor: 'secondary.light',
             width: '100%',
             position: 'relative',
-            top: { xs: 160, md: 60 },
+            top: 65,
           }}
         >
-          <Button component={Link} to={'/'} variant="text" disableElevation>
+          <Link to={'/'} style={{ color: 'black', textDecoration: 'none' }}>
             <Typography variant="h6" component="p">
               ← Return to Home
             </Typography>
-          </Button>
+          </Link>
         </Toolbar>
         <Container
           sx={{
             display: 'flex',
             flexDirection: 'column',
             pb: 5,
-            pt: { xs: 22, md: 10 },
+            pt: 10,
           }}
         >
           <Typography variant="h1" component="h1">
@@ -152,14 +150,14 @@ function Businesspage() {
           backgroundColor: 'secondary.light',
           width: '100%',
           position: 'relative',
-          top: { xs: 160, md: 60 },
+          top: 65,
         }}
       >
-        <Button component={Link} to={'/'} variant="text" disableElevation>
+        <Link to={'/'} style={{ color: 'black', textDecoration: 'none' }}>
           <Typography variant="h6" component="p">
             ← Return to Home
           </Typography>
-        </Button>
+        </Link>
       </Toolbar>
 
       {/* main content */}
@@ -168,7 +166,7 @@ function Businesspage() {
           display: 'flex',
           flexDirection: 'column',
           pb: 5,
-          pt: { xs: 22, md: 10 },
+          pt: 10,
         }}
       >
         {/* name header and industries */}
@@ -207,7 +205,7 @@ function Businesspage() {
             gap: 4,
           }}
         >
-          {/* image container */}
+          {/* description + contact container */}
           <Box
             sx={{
               display: 'flex',
@@ -221,8 +219,7 @@ function Businesspage() {
                 borderRadius: 2,
                 overflow: 'hidden',
                 mb: 2,
-                border: '1px solid',
-                borderColor: 'primary.main',
+                border: '2px solid black',
               }}
             >
               <CardContent>
@@ -250,80 +247,12 @@ function Businesspage() {
                 </Box>
               </CardContent>
             </Card>
-          </Box>
-          {/* location container */}
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 3,
-              height: '100%',
-            }}
-          >
             <Card
               sx={{
                 borderRadius: 2,
                 overflow: 'hidden',
                 mb: 2,
-                border: '1px solid',
-                borderColor: 'primary.main',
-              }}
-            >
-              <CardContent>
-                <Typography variant="h5" component="h2" sx={{ mb: 2 }}>
-                  Location
-                </Typography>
-                <Box
-                  sx={{
-                    width: '100%',
-                    height: 300,
-                    borderRadius: 2,
-                    overflow: 'hidden',
-                    mb: 2,
-                    border: '1px solid',
-                    borderColor: 'primary.main',
-                  }}
-                >
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    loading="lazy"
-                    src={`https://maps.google.com/maps?q=${encodeURIComponent(currentBusiness.address)}&output=embed`}
-                    allowFullScreen
-                    referrerPolicy="no-referrer-when-downgrade"
-                    onClick={() => trackClick('Map Click')}
-                  />
-                </Box>
-
-                <Box sx={{ display: 'flex', justifyItems: 'center' }}>
-                  <Typography component="pre" sx={{ fontWeight: 900 }}>
-                    Address:{' '}
-                  </Typography>
-                  <Typography component="p">
-                    {currentBusiness.address}
-                  </Typography>
-                </Box>
-              </CardContent>
-            </Card>
-          </Box>
-
-          {/* contact info */}
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 3,
-              height: '100%',
-            }}
-          >
-            <Card
-              sx={{
-                borderRadius: 2,
-                overflow: 'hidden',
-                mb: 2,
-                border: '1px solid',
-                borderColor: 'primary.main',
+                border: '2px solid black',
               }}
             >
               <CardContent>
@@ -394,8 +323,7 @@ function Businesspage() {
               </CardContent>
             </Card>
           </Box>
-
-          {/* hours info */}
+          {/* location + hours container */}
           <Box
             sx={{
               display: 'flex',
@@ -409,8 +337,52 @@ function Businesspage() {
                 borderRadius: 2,
                 overflow: 'hidden',
                 mb: 2,
-                border: '1px solid',
-                borderColor: 'primary.main',
+                border: '2px solid black',
+              }}
+            >
+              <CardContent>
+                <Typography variant="h5" component="h2" sx={{ mb: 2 }}>
+                  Location
+                </Typography>
+                <Box
+                  sx={{
+                    width: '100%',
+                    height: 300,
+                    borderRadius: 2,
+                    overflow: 'hidden',
+                    mb: 2,
+                    border: '1px solid',
+                    borderColor: 'primary.main',
+                  }}
+                >
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    loading="lazy"
+                    src={`https://maps.google.com/maps?q=${encodeURIComponent(currentBusiness.address)}&output=embed`}
+                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
+                    onClick={() => trackClick('Map Click')}
+                  />
+                </Box>
+
+                <Box sx={{ display: 'flex', justifyItems: 'center' }}>
+                  <Typography component="pre" sx={{ fontWeight: 900 }}>
+                    Address:{' '}
+                  </Typography>
+                  <Typography component="p">
+                    {currentBusiness.address}
+                  </Typography>
+                </Box>
+              </CardContent>
+            </Card>
+            <Card
+              sx={{
+                borderRadius: 2,
+                overflow: 'hidden',
+                mb: 2,
+                border: '2px solid black',
               }}
             >
               <CardContent>

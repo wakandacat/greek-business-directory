@@ -48,6 +48,32 @@ const theme = createTheme({
       textDecoration: 'none', //no underline for links
     },
   },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        'a, button, [role="button"], input, select, textarea': {
+          transition:
+            'color 200ms ease-in-out, background-color 200ms ease-in-out, border-color 200ms ease-in-out, opacity 200ms ease-in-out, box-shadow 200ms ease-in-out',
+        },
+      },
+    },
+    MuiButtonBase: {
+      styleOverrides: {
+        root: {
+          transition:
+            'color 200ms ease-in-out, background-color 200ms ease-in-out, border-color 200ms ease-in-out, opacity 200ms ease-in-out, box-shadow 200ms ease-in-out !important',
+        },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          transition:
+            'box-shadow 200ms ease-in-out, transform 200ms ease-in-out',
+        },
+      },
+    },
+  },
   breakpoints: {
     values: {
       xs: 0,

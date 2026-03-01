@@ -53,7 +53,7 @@ function BusinessCard(props: propType) {
 
   return (
     <Box sx={{ minWidth: 250, maxWidth: 350 }}>
-      <Card sx={{ border: '2px solid black' }}>
+      <Card sx={{ border: '2px solid black', borderRadius: 2 }}>
         <CardMedia
           component="img"
           alt="business logo"
@@ -62,7 +62,11 @@ function BusinessCard(props: propType) {
           sx={{ objectFit: 'cover' }}
         />
         <CardContent>
-          <Typography variant="h5" component="p" sx={{ fontWeight: 700 }}>
+          <Typography
+            variant="h5"
+            component="p"
+            sx={{ fontWeight: 700, color: 'primary.main' }}
+          >
             {highlight(props.name, props.searchTerm || '')}
           </Typography>
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, py: 1 }}>
