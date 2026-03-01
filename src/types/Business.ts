@@ -7,6 +7,7 @@ export interface Business {
   categories: string[];
   description: string;
   address: string;
+  contact: string;
   phone?: string;
   website?: string;
   email?: string;

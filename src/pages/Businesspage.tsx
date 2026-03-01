@@ -12,6 +12,9 @@ import {
   Toolbar,
   Link as MuiLink,
   Button,
+  Grid,
+  Card,
+  CardContent,
 } from '@mui/material';
 import ReactGA from 'react-ga4';
 
@@ -168,26 +171,35 @@ function Businesspage() {
           pt: { xs: 22, md: 10 },
         }}
       >
-        <Typography variant="h3" component="h1" sx={{ py: 3 }}>
-          {currentBusiness.name}
-        </Typography>
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, py: 1 }}>
-          {currentBusiness.categories.map((category) => (
-            <Typography
-              key={category}
-              component="p"
-              sx={{
-                fontSize: '0.8rem',
-                fontWeight: 700,
-                border: '1px solid',
-                px: 1,
-                borderColor: 'primary.main',
-              }}
-            >
-              {category}
-            </Typography>
-          ))}
+        {/* name header and industries */}
+        <Box sx={{ mb: 2 }}>
+          <Typography
+            variant="h3"
+            component="h1"
+            sx={{ color: 'primary.main', fontWeight: 700 }}
+          >
+            {currentBusiness.name}
+          </Typography>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, py: 1 }}>
+            {currentBusiness.categories.map((category) => (
+              <Typography
+                key={category}
+                component="p"
+                sx={{
+                  fontSize: '0.8rem',
+                  fontWeight: 700,
+                  border: '1px solid',
+                  px: 1,
+                  borderColor: 'primary.main',
+                }}
+              >
+                {category}
+              </Typography>
+            ))}
+          </Box>
         </Box>
+
+        {/* grid info container */}
         <Box
           sx={{
             display: 'grid',
@@ -195,139 +207,259 @@ function Businesspage() {
             gap: 4,
           }}
         >
+          {/* image container */}
           <Box
             sx={{
               display: 'flex',
-              flexDirection: { xs: 'column', md: 'row' },
-              gap: 4,
-              pb: 2,
+              flexDirection: 'column',
+              gap: 3,
+              height: '100%',
             }}
           >
-            <img
-              src={currentBusiness.image || defaultPhoto}
-              style={{
-                width: '100%',
-                height: 300,
-                objectFit: 'cover',
-              }}
-            />
-          </Box>
-          <Box
-            sx={{
-              width: '100%',
-              height: 300,
-              borderRadius: 2,
-              overflow: 'hidden',
-              mb: 2,
-              border: '1px solid',
-              borderColor: 'primary.main',
-            }}
-          >
-            <iframe
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              loading="lazy"
-              src={`https://maps.google.com/maps?q=${currentBusiness.coordinates.lat},${currentBusiness.coordinates.lng}&output=embed`}
-              allowFullScreen
-              referrerPolicy="no-referrer-when-downgrade"
-              onClick={() => trackClick('Map Click')}
-            />
-          </Box>
-          {/* info */}
-          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-            <Box sx={{ display: 'flex', justifyItems: 'center' }}>
-              <Typography component="pre" sx={{ fontWeight: 900 }}>
-                Address:{' '}
-              </Typography>
-              <Typography component="p">{currentBusiness.address}</Typography>
-            </Box>
-            <Box sx={{ display: 'flex', justifyItems: 'center' }}>
-              <Typography component="pre" sx={{ fontWeight: 900 }}>
-                Phone:{' '}
-              </Typography>
-              {currentBusiness.phone ? (
-                <MuiLink
-                  href={`tel:${currentBusiness.phone}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackClick('Phone Click')}
-                >
-                  {currentBusiness.phone}
-                </MuiLink>
-              ) : (
-                <Typography component="p">No phone number available</Typography>
-              )}
-            </Box>
-            <Box sx={{ display: 'flex', justifyItems: 'center' }}>
-              <Typography component="pre" sx={{ fontWeight: 900 }}>
-                Email:{' '}
-              </Typography>
-              {currentBusiness.email ? (
-                <MuiLink
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={`mailto:${currentBusiness.email}`}
-                  onClick={() => trackClick('Email Click')}
-                >
-                  {currentBusiness.email}
-                </MuiLink>
-              ) : (
-                <Typography component="p">No email available</Typography>
-              )}
-            </Box>
-            <Box sx={{ display: 'flex', justifyItems: 'center' }}>
-              <Typography component="pre" sx={{ fontWeight: 900 }}>
-                Website:{' '}
-              </Typography>
-              {currentBusiness.website ? (
-                <MuiLink
-                  href={currentBusiness.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackClick('Website Click')}
-                >
-                  {currentBusiness.website}
-                </MuiLink>
-              ) : (
-                <Typography component="p">No website available</Typography>
-              )}
-            </Box>
-
-            <Box
+            <Card
               sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyItems: 'center',
+                borderRadius: 2,
+                overflow: 'hidden',
+                mb: 2,
+                border: '1px solid',
+                borderColor: 'primary.main',
               }}
             >
-              <Typography component="p" sx={{ fontWeight: 900 }}>
-                Hours:{' '}
-              </Typography>
-              <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                {WEEKDAY.map((day) => (
-                  <Typography key={day} component="p">
-                    {`${day.charAt(0).toUpperCase() + day.slice(1)}: ${currentBusiness.hours[day]}`}
-                    {day === currDate && (
-                      <Typography
-                        component="span"
-                        sx={{
-                          fontWeight: 700,
-                          color: isOpen ? 'green' : 'red',
-                          ml: 1,
-                        }}
-                      >
-                        {isOpen ? 'Currently Open' : 'Currently Closed'}
-                      </Typography>
-                    )}
+              <CardContent>
+                <Typography variant="h5" component="h2" sx={{ mb: 2 }}>
+                  Description
+                </Typography>
+                <img
+                  src={currentBusiness.image || defaultPhoto}
+                  style={{
+                    width: '100%',
+                    height: 300,
+                    objectFit: 'cover',
+                  }}
+                />
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 1,
+                  }}
+                >
+                  <Typography variant="h5" component="p">
+                    {currentBusiness.description}
                   </Typography>
-                ))}
-              </Box>
-            </Box>
+                </Box>
+              </CardContent>
+            </Card>
           </Box>
-          <Typography variant="h5" component="p">
-            {currentBusiness.description}
-          </Typography>
+          {/* location container */}
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 3,
+              height: '100%',
+            }}
+          >
+            <Card
+              sx={{
+                borderRadius: 2,
+                overflow: 'hidden',
+                mb: 2,
+                border: '1px solid',
+                borderColor: 'primary.main',
+              }}
+            >
+              <CardContent>
+                <Typography variant="h5" component="h2" sx={{ mb: 2 }}>
+                  Location
+                </Typography>
+                <Box
+                  sx={{
+                    width: '100%',
+                    height: 300,
+                    borderRadius: 2,
+                    overflow: 'hidden',
+                    mb: 2,
+                    border: '1px solid',
+                    borderColor: 'primary.main',
+                  }}
+                >
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    loading="lazy"
+                    src={`https://maps.google.com/maps?q=${encodeURIComponent(currentBusiness.address)}&output=embed`}
+                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
+                    onClick={() => trackClick('Map Click')}
+                  />
+                </Box>
+
+                <Box sx={{ display: 'flex', justifyItems: 'center' }}>
+                  <Typography component="pre" sx={{ fontWeight: 900 }}>
+                    Address:{' '}
+                  </Typography>
+                  <Typography component="p">
+                    {currentBusiness.address}
+                  </Typography>
+                </Box>
+              </CardContent>
+            </Card>
+          </Box>
+
+          {/* contact info */}
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 3,
+              height: '100%',
+            }}
+          >
+            <Card
+              sx={{
+                borderRadius: 2,
+                overflow: 'hidden',
+                mb: 2,
+                border: '1px solid',
+                borderColor: 'primary.main',
+              }}
+            >
+              <CardContent>
+                <Typography variant="h5" component="h2" sx={{ mb: 2 }}>
+                  Contact
+                </Typography>
+                <Box sx={{ display: 'flex', justifyItems: 'center' }}>
+                  <Typography component="pre" sx={{ fontWeight: 900 }}>
+                    Contact:{' '}
+                  </Typography>
+                  <Typography component="p">
+                    {currentBusiness.contact}
+                  </Typography>
+                </Box>
+                <Box sx={{ display: 'flex', justifyItems: 'center' }}>
+                  <Typography component="pre" sx={{ fontWeight: 900 }}>
+                    Phone:{' '}
+                  </Typography>
+                  {currentBusiness.phone ? (
+                    <MuiLink
+                      href={`tel:${currentBusiness.phone}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => trackClick('Phone Click')}
+                    >
+                      {currentBusiness.phone}
+                    </MuiLink>
+                  ) : (
+                    <Typography component="p">
+                      No phone number available
+                    </Typography>
+                  )}
+                </Box>
+                <Box sx={{ display: 'flex', justifyItems: 'center' }}>
+                  <Typography component="pre" sx={{ fontWeight: 900 }}>
+                    Email:{' '}
+                  </Typography>
+                  {currentBusiness.email ? (
+                    <MuiLink
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={`mailto:${currentBusiness.email}`}
+                      onClick={() => trackClick('Email Click')}
+                    >
+                      {currentBusiness.email}
+                    </MuiLink>
+                  ) : (
+                    <Typography component="p">No email available</Typography>
+                  )}
+                </Box>
+                <Box sx={{ display: 'flex', justifyItems: 'center' }}>
+                  <Typography component="pre" sx={{ fontWeight: 900 }}>
+                    Website:{' '}
+                  </Typography>
+                  {currentBusiness.website ? (
+                    <MuiLink
+                      href={currentBusiness.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => trackClick('Website Click')}
+                    >
+                      {currentBusiness.website}
+                    </MuiLink>
+                  ) : (
+                    <Typography component="p">No website available</Typography>
+                  )}
+                </Box>
+              </CardContent>
+            </Card>
+          </Box>
+
+          {/* hours info */}
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 3,
+              height: '100%',
+            }}
+          >
+            <Card
+              sx={{
+                borderRadius: 2,
+                overflow: 'hidden',
+                mb: 2,
+                border: '1px solid',
+                borderColor: 'primary.main',
+              }}
+            >
+              <CardContent>
+                <Typography variant="h5" component="h2" sx={{ mb: 2 }}>
+                  Hours
+                </Typography>
+
+                <Box
+                  sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}
+                >
+                  {WEEKDAY.map((day) => (
+                    <Box
+                      key={day}
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        px: 1,
+                        py: 0.5,
+                        borderRadius: 1,
+                        ...(day === currDate && {
+                          backgroundColor: '#E3F2FD',
+                          color: 'primary.main',
+                        }),
+                      }}
+                    >
+                      <Typography
+                        component="p"
+                        sx={{ fontWeight: day === currDate ? 700 : 'normal' }}
+                      >
+                        {`${day.charAt(0).toUpperCase() + day.slice(1)}: ${currentBusiness.hours[day]}`}
+                        {day === currDate && (
+                          <Typography
+                            component="span"
+                            sx={{
+                              fontWeight: 700,
+                              color: isOpen ? 'green' : 'red',
+                              ml: 1,
+                            }}
+                          >
+                            {isOpen ? 'Currently Open' : 'Currently Closed'}
+                          </Typography>
+                        )}
+                      </Typography>
+                    </Box>
+                  ))}
+                </Box>
+              </CardContent>
+            </Card>
+          </Box>
         </Box>
       </Container>
     </>

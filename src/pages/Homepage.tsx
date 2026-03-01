@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import type { Business } from '../types/Business';
 import businessData from '../data/businesses-en.json'; //synchronous data bundled at build time --> would need to be an async function if a backend is added
 import FilterBar from '../components/FilterBar';
-import { CATEGORIES } from '../data/constants';
+import { CATEGORIES, type ResultsPerPage } from '../data/constants';
 import ReactGA from 'react-ga4';
 
 function HomePage() {
@@ -14,8 +14,10 @@ function HomePage() {
   ); //create an array of Businesses to store the contents of the JSON file
 
   //pagination
-  const numEntriesPerPage = 9;
+  const [entriesPerPage, setEntriesPerPage] = useState<ResultsPerPage>(9);
   const [page, setPage] = useState<number>(1);
+
+  useEffect(() => { setPage(1); }, [entriesPerPage]);
 
   //user's position
   const [userLocation, setUserLocation] = useState<{
@@ -128,6 +130,7 @@ function HomePage() {
     setSearchValue('');
     setSelectedCategory('All');
     setSelectedSort('None');
+    setEntriesPerPage(9);
   }
 
   //----------------calculating distance functions reference: https://dev.to/ayushman/measure-distance-between-two-locations-in-javascript-using-the-haversine-formula-7dc----//
@@ -163,8 +166,9 @@ function HomePage() {
   //--------------------------end of reference-------------------------
 
   //calculate the businesses to render based on the pagination
-  const startIndex = (page - 1) * numEntriesPerPage;
-  const endIndex = startIndex + numEntriesPerPage;
+  const effectivePerPage = entriesPerPage === 'All' ? sortedBusinesses.length : entriesPerPage;
+  const startIndex = (page - 1) * effectivePerPage;
+  const endIndex = startIndex + effectivePerPage;
   const currentPageBusinesses = sortedBusinesses.slice(startIndex, endIndex);
 
   return (
@@ -187,6 +191,8 @@ function HomePage() {
         userLocation={userLocation}
         searchValue={searchValue}
         setSearchValue={setSearchValue}
+        entriesPerPage={entriesPerPage}
+        setEntriesPerPage={setEntriesPerPage}
         clearFilters={clearFilters}
       />
 
@@ -229,20 +235,22 @@ function HomePage() {
               ></BusinessCard>
             ))}
           </Box>
-          <Box sx={{ display: 'flex', justifyContent: 'center', py: 4 }}>
-            <Pagination
-              size="large"
-              variant="outlined"
-              color="primary"
-              count={Math.ceil(sortedBusinesses.length / numEntriesPerPage)}
-              page={page}
-              onChange={(_, value) => {
-                setPage(value);
-                document.body.scrollTop = 0; // For Safari
-                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-              }}
-            />
-          </Box>
+          {entriesPerPage !== 'All' && (
+            <Box sx={{ display: 'flex', justifyContent: 'center', py: 4 }}>
+              <Pagination
+                size="large"
+                variant="outlined"
+                color="primary"
+                count={Math.ceil(sortedBusinesses.length / effectivePerPage)}
+                page={page}
+                onChange={(_, value) => {
+                  setPage(value);
+                  document.body.scrollTop = 0; // For Safari
+                  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+                }}
+              />
+            </Box>
+          )}
         </>
       )}
     </Container>

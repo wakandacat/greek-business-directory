@@ -7,7 +7,12 @@ import {
   TextField,
   Button,
 } from '@mui/material';
-import { CATEGORIES, SORTBY } from '../data/constants';
+import {
+  CATEGORIES,
+  SORTBY,
+  RESULTS_PER_PAGE,
+  type ResultsPerPage,
+} from '../data/constants';
 
 interface FilterProps {
   categoryFilter: string;
@@ -17,6 +22,8 @@ interface FilterProps {
   userLocation: { lat: number; lng: number } | null;
   searchValue: string;
   setSearchValue: (searchValue: string) => void;
+  entriesPerPage: ResultsPerPage;
+  setEntriesPerPage: (n: ResultsPerPage) => void;
   clearFilters: () => void;
 }
 
@@ -72,6 +79,22 @@ function FilterBar(props: FilterProps) {
               disabled={sorting === 'Closest' && !props.userLocation}
             >
               {sorting}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+      <FormControl fullWidth>
+        <InputLabel sx={{ color: 'text.primary' }}>Results Per Page</InputLabel>
+        <Select
+          value={props.entriesPerPage}
+          label="Results Per Page"
+          onChange={(e) =>
+            props.setEntriesPerPage(e.target.value as ResultsPerPage)
+          }
+        >
+          {RESULTS_PER_PAGE.map((n) => (
+            <MenuItem key={n} value={n}>
+              {n}
             </MenuItem>
           ))}
         </Select>

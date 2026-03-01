@@ -10,6 +10,7 @@ export const CATEGORIES = [
   'Healthcare',
   'Cleaning',
   'Professional Services',
+  'Real Estate',
   'Other',
 ];
 
@@ -30,3 +31,6 @@ export const WEEKDAY: string[] = [
 ] as const;
 
 export type WeekDay = typeof WEEKDAY[number];
+
+export const RESULTS_PER_PAGE = [6, 9, 12, 'All'] as const;
+export type ResultsPerPage = typeof RESULTS_PER_PAGE[number];

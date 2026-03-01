@@ -5,6 +5,7 @@
         "categories": ["Cleaning"],
         "description" : "Professional cleaning services for residential and commercial properties. Specializing in deep cleaning, move-in/move-out cleaning, and regular maintenance.",
         "address": "1186 Bank St, Ottawa, ON K1S 3X9",
+        "contact": "John Doe",
         "phone": "(613) 555-1234",
         "website": "https://alitheiaottawa.com",
         "email": "info@alitheiaottawa.com",
@@ -29,6 +30,7 @@
         "categories": ["Entertainment"],
         "description": "Family-friendly entertainment center with indoor and outdoor play areas, arcade games, and a café. Perfect for kids of all ages to have fun and stay active.",
         "address": "4220 Upper Dwyer Hill Rd, Arnprior, ON K7S 3G7",
+        "contact": "John Doe",
         "phone": "(613) 555-5678",
         "website": "https://athensplayparks.ca",
         "email": "info@athensplayparks.ca",
@@ -53,6 +55,7 @@
         "categories": ["Landscape"],
         "description": "Professional landscaping and outdoor construction services for residential and commercial properties. Quality work guaranteed.",
         "address": "3904 March Rd, Carp, ON K0A 1L0",
+        "contact": "John Doe",
         "phone": "",
         "email": "info@sunnyyardmaintenance.com",
         "hours": {
@@ -77,6 +80,7 @@
         "categories": ["Retail"],
         "description" : "Family-owned Greek thrift store offering gently used clothing, furniture, and household items. Specializing in authentic Greek and Mediterranean items.",
         "address": "2590 Carp Rd, Carp, ON K0A 1L0",
+        "contact": "John Doe",
         "phone": "(613) 555-1234",
         "website": "https://olympiaottawa.com",
         "email": "info@olympiaottawa.com",
@@ -102,6 +106,7 @@
         "categories": ["Healthcare"],
         "description": "Professional health and wellness services for individuals and families. Offering personalized wellness programs, nutritional counseling, and holistic care.",
         "address": "960 Teron Rd, Ottawa, ON K2K 2B6",
+        "contact": "John Doe",
         "phone": "(613) 555-5678",
         "website": "https://klirohealthwellness.com",
         "email": "info@klirohealthwellness.com",
@@ -126,6 +131,7 @@
         "categories": ["Construction"],
         "description": "Construction services for residential and commercial properties. Specializing in home renovations, additions, and outdoor construction projects. Quality work guaranteed.",
         "address": "7 Hansen Ave, Kanata, ON K2K 2L9",
+        "contact": "John Doe",
         "phone": "(613) 555-9999",
         "email": "info@yorgosconstruction.com",
         "hours": {
@@ -150,6 +156,7 @@
         "categories": ["Restaurant"],
         "description" : "Family-owned Greek restaurant serving authentic Mediterranean cuisine since 1985. Specializing in traditional dishes and warm hospitality.",
         "address": "27 Léonard Ave, Ottawa, ON K1S 4T8",
+        "contact": "John Doe",
         "phone": "(613) 555-1234",
         "website": "https://yiayiasrestaurant.com",
         "email": "info@yiayiasrestaurant.com",
@@ -175,6 +182,7 @@
         "categories": ["Bakery"],
         "description": "Bakery offering fresh pastries and breads. Experience the taste of Greece with our authentic recipes and warm atmosphere. Perfect for breakfast, lunch, or a sweet treat.",
         "address": "2100 Cabot St, Ottawa, ON K1H 6K1",
+        "contact": "John Doe",
         "phone": "(613) 555-5678",
         "website": "https://iliosbakery.ca",
         "email": "info@iliosbakery.ca",
@@ -200,6 +208,7 @@
         "categories": ["Landscape", "Construction"],
         "description": "Professional maintenance and landscaping services for residential and commercial properties. Availble for regular upkeep, seasonal cleanups, and construction projects.",
         "address": "1755 Old Carp Rd, Kanata, ON K2K 1X7",
+        "contact": "John Doe",
         "phone": "(613) 555-9999",
         "email": "info@zoe-maintenance.com",
         "hours": {
@@ -223,6 +232,7 @@
         "categories": ["Grocery", "Restaurant", "Retail", "Bakery"],
         "description" : "Greek grocery store and restaurant offering a wide selection of authentic Greek products and delicious meals. Experience the flavors of Greece with our fresh ingredients and traditional recipes.",
         "address": "3773 Carp Rd, Carp, ON K0A 1L0",
+        "contact": "John Doe",
         "phone": "(613) 555-1234",
         "website": "https://apollofoods.com",
         "email": "info@apollofoods.com",
@@ -248,6 +258,7 @@
         "categories": ["Other"],
         "description": "Professional graphic design services for businesses and individuals. Specializing in branding, logo design, and marketing materials.",
         "address": "2756 Chamberland St, Rockland, ON K4K 0B8",
+        "contact": "John Doe",
         "phone": "(613) 555-5678",
         "website": "https://greciangraphicdesign.ca",
         "email": "info@greciangraphicdesign.ca",
@@ -272,6 +283,7 @@
         "categories": ["Professional Services"],
         "description": "Professional accounting services for small businesses and individuals.",
         "address": "2930 French Hill Rd, Cumberland, ON K4C 1K9",
+        "contact": "John Doe",
         "phone": "(613) 555-9999",
         "email": "info@heliosaccounting.com",
         "hours": {
@@ -292,77 +304,29 @@
     },
     {
         "id": "12",
-        "name": "Adelphia Floor Surfaces Ltd.",
-        "categories": ["Construction"],
-        "description": "Quality flooring for any space.",
-        "address": "110 Bentley Ave #26, Nepean, ON K2E 6T9",
-        "phone": "+1 (613) 225 8728",
-        "website": "http://adelphiafloorsurfaces.com/index.html",
-        "email": "info@adelphiafloorsurfaces.com",
+        "name": "Marcus & Millichap",
+        "categories": ["Real Estate"],
+        "description": "Commercial real estate brokerage and advisory services.",
+        "address": "275 Bank Street Suite 301, Ottawa, ON",
+        "contact": "Nick Pantieras",
+        "phone": "(613) 720 2200",
+        "website": "https://www.institutionalpropertyadvisors.com/advisors/nick-pantieras",
+        "email": "npantieras@ipammi.ca",
         "hours": {
-            "monday": "7:30 AM - 4:00 PM",
-            "tuesday": "7:30 AM - 4:00 PM",
-            "wednesday": "7:30 AM - 4:00 PM",
-            "thursday": "7:30 AM - 4:00 PM",
-            "friday": "7:30 AM - 4:00 PM",
-            "saturday": "Closed",
-            "sunday": "Closed"
+            "monday": "9:00 AM - 5:00 PM",
+            "tuesday": "9:00 AM - 5:00 PM",
+            "wednesday": "9:00 AM - 5:00 PM",
+            "thursday": "9:00 AM - 5:00 PM",
+            "friday": "9:00 AM - 5:00 PM",
+            "saturday": "9:00 AM - 5:00 PM",
+            "sunday": "9:00 AM - 5:00 PM"
         },
         "coordinates": {
-            "lat": 45.33489564128191,
-            "lng": -75.71272374603156
+            "lat": 45.415857594683295, 
+            "lng": -75.69636828914308
         },
-        "image": "/images/adelphia-logo-dark.png",
-        "viewable": false
-    },
-    {
-        "id": "13",
-        "name": "EVOO Greek Kitchen",
-        "categories": ["Restaurant"],
-        "description": "EVOO Greek Kitchen, located in Ottawa, is a contemporary restaurant that blends traditional Greek flavors with a modern twist. Their menu features a variety of authentic Mediterranean dishes, from souvlaki to fresh seafood, all prepared using high-quality ingredients. The warm, welcoming atmosphere makes it ideal for both casual meals and special occasions. They also offer catering services and an extensive wine list to complement their dishes.",
-        "address": "438 Preston St, Ottawa, Ontario K1S 4N4",
-        "phone": " (613) 695 3860",
-        "website": "https://evoogreekkitchen.ca/",
-        "email": "info@evoogreekkitchen.ca",
-        "hours": {
-            "monday": "Closed",
-            "tuesday": "11:30 AM - 10:00 PM",
-            "wednesday": "11:30 AM - 10:00 PM",
-            "thursday": "11:30 AM - 11:00 PM",
-            "friday": "11:30 AM - 11:00 PM",
-            "saturday": "11:30 AM - 11:00 PM",
-            "sunday": "10:00 AM - 10:00 PM"
-        },
-        "coordinates": {
-            "lat": 45.399350500934126,
-            "lng": -75.70881912883596
-        },
-        "image": "/images/evoo-image.jpg",
+        "image": "/images/marcusmillichap.jpg",
         "viewable": false
     }
-    ,
-    {
-        "id": "14",
-        "name": "Argos Carpets and Flooring",
-        "categories": ["Construction"],
-        "description": "Argos Carpets is a full-service residential and commercial flooring contractor designed to provide customers with what is most important to them; low cost, superior service, and unmatched quality. At Argos Carpets we approach each project as a team and ensure our customers are pleased with every aspect of their flooring project.",
-        "address": "1914 Merivale Road Ottawa, Ontario, K2G 1E8",
-        "phone": " (613) 226-6573",
-        "website": "https://argoscarpets.ca/",
-        "hours": {
-            "monday": "9:00 AM - 6:00 PM",
-            "tuesday": "9:00 AM - 6:00 PM",
-            "wednesday": "9:00 AM - 6:00 PM",
-            "thursday": "9:00 AM - 6:00 PM",
-            "friday": "9:00 AM - 6:00 PM",
-            "saturday": "10:00 AM - 3:00 PM",
-            "sunday": "Closed"
-        },
-        "coordinates": {
-            "lat": 45.32918399584829,
-            "lng": -75.72250445767192
-        },
-        "image": "/images/argos-carpets.jpg",
-        "viewable": false
-    }
+
 ]

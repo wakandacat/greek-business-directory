@@ -43,9 +43,10 @@ function ContactForm() {
   });
 
   //business hours time picker values
-  const [scheduleMode, setScheduleMode] = useState<string>('everyday');
+  const [scheduleMode, setScheduleMode] = useState<string>('weekday-weekend');
   const [hours, setHours] = useState<HoursRecord>({
-    'Every-Day': defaultHours(),
+    'Monday-Friday': defaultHours(),
+    'Saturday-Sunday': defaultHours(),
   });
 
   //toggle between  different hour schedules and show/hide the timepicker fields
@@ -113,7 +114,7 @@ function ContactForm() {
         form.reset();
         setIndustryArr([]);
         setHours({ 'Every-Day': defaultHours() });
-        setScheduleMode('everyday');
+        setScheduleMode('weekday-weekend');
       } else {
         const errorText = await response.text();
         console.error('Form submission error:', errorText);
